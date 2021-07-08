@@ -1,0 +1,57 @@
+$percentage: '%';
+@for $i from 0 through 100 {
+    .min-wt-#{$i}p {
+        min-width: #{$i}#{$percentage};
+    }
+
+    .min-ht-#{$i}p {
+        min-height: #{$i}#{$percentage};
+    }
+
+    .max-wt-#{$i}p {
+        min-width: #{$i}#{$percentage};
+    }
+
+    .max-ht-#{$i}p {
+        min-height: #{$i}#{$percentage};
+    }
+
+    .ht-#{$i}p {
+        height: #{$i}#{$percentage};
+    }
+
+    .wt-#{$i}p {
+        width: #{$i}#{$percentage};
+    }
+    
+}
+
+@for $i from 1 through 900 {
+    .min-wt-#{$i}x {
+        min-width: #{$i}px;
+    }
+
+    .min-ht-#{$i}x {
+        min-height: #{$i}px;
+    }
+
+    .max-wt-#{$i}x {
+        max-width: #{$i}px;
+    }
+
+    .max-ht-#{$i}x {
+        max-height: #{$i}px;
+    }
+
+    .ht-#{$i}x {
+        height: #{$i}px !important;
+    }
+
+    .wt-#{$i}x {
+        width: #{$i}px;
+    }
+}
+
+.min-ht-60vh {
+    height: 60vh;
+}

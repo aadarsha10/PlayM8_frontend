@@ -1,0 +1,95 @@
+$sides: (
+"": "",
+"t": "top",
+"b": "bottom",
+"l": "left",
+"r": "right",
+);
+
+$breakpoints: (
+"": "",
+"xs": 576px,
+"sm": 768px,
+"md": 992px,
+"lg": 1200px,
+);
+
+
+
+
+@each $breakName, $breakValue in $breakpoints {
+  @each $sideName, $sideValue in $sides {
+    @for $i from 0 through 1000 {
+      $property: if($sideName == '', '', -#{$sideValue});
+      $space: $i;
+      $selector: '';
+      $percentage: '%';
+
+      @if $breakName != "" {
+        $selector: #{$sideName}-#{$breakName}-#{$i};
+      } @else {
+        $selector: #{$sideName}-#{$i};
+      }
+
+      @if $breakName != "" {
+        @media (min-width: $breakValue) {
+          .m#{$selector}x {
+            margin#{$property}: #{$space}px;
+          }
+  
+          .p#{$selector}x {
+            padding#{$property}: #{$space}px;
+          }
+
+          .m#{$selector}p {
+            margin#{$property}: #{$space}#{$percentage};
+          }
+  
+          .p#{$selector}p {
+            padding#{$property}: #{$space}#{$percentage};
+          }
+        }
+      } @else {
+        .m#{$selector}x {
+          margin#{$property}: #{$space}px;
+        }
+
+        .p#{$selector}x {
+          padding#{$property}: #{$space}px !important;
+        }
+
+        .m#{$selector}p {
+            margin#{$property}: #{$space}#{$percentage};
+          }
+  
+          .p#{$selector}p {
+            padding#{$property}: #{$space}#{$percentage};
+          }
+      }
+    }
+  }
+}
+
+.margin-top--18px {
+	margin-top: -18px;
+}
+
+.margin-top--8px {
+	margin-top: -8px;
+}
+
+.margin-top--4px {
+	margin-top: -4px;
+}
+
+.ml--15x {
+  margin-left: -15px;
+}
+
+.mt--15x {
+  margin-top: -15px;
+}
+
+.right-10 {
+  right: 10px;
+}

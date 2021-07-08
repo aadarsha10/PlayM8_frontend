@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+$default-font-family: 'Roboto';
+$itim-font-family: 'Itim', cursive;
+
+
+// fs-10 : font-size: 10px
+@for $i from 1 through 100 {
+    .fs-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+// lh-10 => line-height: 10px;
+@for $i from 1 through 100 {
+    .lh-#{$i} {
+        line-height: #{$i}px;
+    }
+}
+
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-bolder {
+    font-weight: 900; 
+}
+
+.font-upper {
+    text-transform: uppercase;
+}
+
+.font-capitalize {
+    text-transform: capitalize;
+}
+
+.text-black {
+    color: black;
+}
+
+.link {
+    color: #44A3DE;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.font-white {
+    color: $white;
+}
+
+.font-black {
+    color: $black !important;
+}
+
+.font-primary {
+    color: $primary;
+}
+
+.font-danger {
+    color: $danger;
+}
+
+.curP {
+    cursor: pointer;
+}
+
+.font-light-grey {
+    color: rgba($color: $black, $alpha: 0.7)
+}
+
+.font-itim {
+    font-family: $itim-font-family;
+}
+
+.font-no-data {
+    color: $no-data-font-color;
+}
+
+.font-header-color {
+    color: $networth-caption-color;
+}
