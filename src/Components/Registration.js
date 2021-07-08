@@ -60,7 +60,7 @@ export default function Registration() {
           <div className="container addEvents border border-success">
             <Form>
               <Form.Group controlId="">
-                <Form.Label>Game Title</Form.Label>
+                <Form.Label>FullName</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Title of your Event"
@@ -70,21 +70,35 @@ export default function Registration() {
                 />
               </Form.Group>
 
-              <Form.Group>
-                <Form.File id="" label="Select Image For Title" />
-                <span className="suggestion-text">
-                  Please choose in jpg Format
-                </span>
+              <Form.Group controlId="">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Title of your Event"
+                  onChange={(event) => {
+                    return setGameTitle(event.target.value);
+                  }}
+                />
               </Form.Group>
 
               <Form.Group controlId="">
-                <Form.Label>Description</Form.Label>
+                <Form.Label>Username</Form.Label>
                 <Form.Control
-                  as="textarea"
-                  rows={5}
-                  placeholder="Details of your event including date, time, venue"
+                  type="text"
+                  placeholder="Title of your Event"
                   onChange={(event) => {
-                    return setDescription(event.target.value);
+                    return setGameTitle(event.target.value);
+                  }}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Title of your Event"
+                  onChange={(event) => {
+                    return setGameTitle(event.target.value);
                   }}
                 />
               </Form.Group>
@@ -94,7 +108,7 @@ export default function Registration() {
               className="btn btn-primary border border-success"
               onClick={addEvent}
             >
-              Add Event
+             Register
             </button>
           </div>
         </div>
@@ -103,7 +117,7 @@ export default function Registration() {
         <div className="alert alert-success" role="alert">
           <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
           <p>
-            You have Successfully Entered your Event. Please check account
+            You have Successfully been registered. Please check account
             section to
           </p>
           <hr></hr>
