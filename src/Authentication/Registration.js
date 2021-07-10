@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
+import NavBar from "../Components/NavBar";
 import "../scss/Registration.scss";
 import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
@@ -54,58 +54,80 @@ export default function Registration() {
       )}
       {ShowAlert === null && (
         <div>
-          <span className="flex flex-center fs-20 mb-20x font-upper font-primary">
-            Fill Up The Form
-          </span>
-          <div className="container addEvents border border-success">
-            <Form>
-              <Form.Group controlId="">
-                <Form.Label>FullName</Form.Label>
-                <Form.Control
+          
+          <div className="register">
+           <form>
+             <h1>Register</h1>
+           <div class="row">
+                   <div class="form-group col-md-6">
+                            <Form.Label for="inputEmail4">FullName</Form.Label>
+                              <Form.Control
+                                type="text"  placeholder="Enter your Full name"
+                                 onChange={(event) => {
+                                 return setGameTitle(event.target.value);
+                                }}/>
+                   </div>
+                   <div class="form-group col-md-6">
+      
+      <Form.Label for="inputEmail4">Email</Form.Label>
+    <Form.Control
                   type="text"
-                  placeholder="Title of your Event"
+                  placeholder="Enter your email"
                   onChange={(event) => {
                     return setGameTitle(event.target.value);
                   }}
                 />
-              </Form.Group>
-
-              <Form.Group controlId="">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
+      
+      </div>
+      </div>
+      <div class="row">
+                   <div class="form-group col-md-6">
+                            <Form.Label for="inputEmail4">Address</Form.Label>
+                              <Form.Control
+                                type="text"  placeholder="Enter your Address"
+                                 onChange={(event) => {
+                                 return setGameTitle(event.target.value);
+                                }}/>
+                   </div>
+                   <div class="form-group col-md-6">
+      
+      <Form.Label for="inputEmail4">Contact Number</Form.Label>
+    <Form.Control
                   type="text"
-                  placeholder="Title of your Event"
+                  placeholder="Enter your contact number"
                   onChange={(event) => {
                     return setGameTitle(event.target.value);
                   }}
                 />
-              </Form.Group>
-
-              <Form.Group controlId="">
-                <Form.Label>Username</Form.Label>
-                <Form.Control
+      
+      </div>
+      </div>
+      <div class="row">
+                   <div class="form-group col-md-6">
+                            <Form.Label for="inputEmail4">Username</Form.Label>
+                              <Form.Control
+                                type="text"  placeholder="Enter your username"
+                                 onChange={(event) => {
+                                 return setGameTitle(event.target.value);
+                                }}/>
+                   </div>
+                   <div class="form-group col-md-6">
+      
+      <Form.Label for="inputEmail4">Password</Form.Label>
+    <Form.Control
                   type="text"
-                  placeholder="Title of your Event"
+                  placeholder="Enter your password"
                   onChange={(event) => {
                     return setGameTitle(event.target.value);
                   }}
                 />
-              </Form.Group>
-
-              <Form.Group controlId="">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Title of your Event"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-              </Form.Group>
-            </Form>
+      
+      </div>
+      </div>
+           </form>
 
             <button
-              className="btn btn-primary border border-success"
+              className="btn btn-primary border border-success registerbtn"
               onClick={addEvent}
             >
              Register
