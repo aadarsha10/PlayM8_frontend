@@ -11,7 +11,7 @@ export default function RegistrationPlayer() {
   const [ShowAlert, setShowAlert] = useState(null);
   // const [validate, setValidate] = useState(false)
 
-  console.log("gameTitle", GameTitle);
+  console.log("Player registration", GameTitle);
 
   const data = {
     GameTitle: GameTitle,
