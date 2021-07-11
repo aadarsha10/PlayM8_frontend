@@ -7,29 +7,30 @@ import axios from "axios";
 import { Link, useHistory } from 'react-router-dom'
 
 export default function RegistrationOrganizer() {
-  const [fullname, setFname] = useState("");
-  const [email, setEmail] = useState("");
-  const [contact, setContact] = useState("");
-  const [address, setAddress] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [Fullname, setFname] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Contact, setContact] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
   const [response1, setResponse] = useState("");
   const [checkLogin, setLoginCheck] = useState(false);
 
 
   const registerorganizer = (e) => {
+
     e.preventDefault()
-    console.log(fullname, email, contact, username, password)
+    console.log(Fullname, Email, Contact, Username)
     const data = {
-      fullname: fullname,
-      contact: contact,
-      address: address,
-      email: email,
-      username: username,
-      password: password
+      fullname: Fullname,
+      contact: Contact,
+      address: Address,
+      email: Email,
+      username: Username,
+      password: Password
     }
 
-    axios.post("http://localhost:90/register/organizer", data).then(response => {
+    axios.post("http://localhost:5000/organizer/register", data).then(response => {
       console.log(response.data.message)
       setResponse(response.data.message)
       goToLogin()
@@ -94,7 +95,7 @@ export default function RegistrationOrganizer() {
 
                   <Form.Label for="Email_input">Contact Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Enter your contact number"
                     onChange={(event) => {
                       return setContact(event.target.value);
@@ -116,7 +117,7 @@ export default function RegistrationOrganizer() {
 
                   <Form.Label for="password_input">Password</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="password"
                     placeholder="Enter your password"
                     onChange={(event) => {
                       return setPassword(event.target.value);

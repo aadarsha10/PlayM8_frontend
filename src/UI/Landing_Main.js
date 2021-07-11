@@ -15,8 +15,8 @@ class Landing_Main extends Component {
             // </Switch> */}
             <div>
                 {/* <Route path='/home' component={Home} /> */}
-                <Route path='/register' exact component={RegistrationOrganizer} />
-                <Route path='/register/player' exact component={RegistrationPlayer} />
+                <Route path='/organizer/register' exact component={RegistrationOrganizer} />
+                <Route path='/player/register' exact component={RegistrationPlayer} />
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
         )
