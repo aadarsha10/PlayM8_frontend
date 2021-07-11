@@ -6,23 +6,30 @@ import { Form } from "react-bootstrap";
 import axios from "axios";
 
 export default function RegistrationPlayer() {
-  const [GameTitle, setGameTitle] = useState("");
-  const [Description, setDescription] = useState("");
+  const [FullName, setFullName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Contact, setContact] = useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
   // const [validate, setValidate] = useState(false)
 
-  console.log("Player registration", GameTitle);
+  console.log("FullName", FullName);
 
   const data = {
-    GameTitle: GameTitle,
-    Image: "Image.jpg",
-    Description: Description,
+    FullName: FullName,
+    Email: Email,
+    Address: Address,
+    Contact: Contact,
+    Username: Username,
+    Password: Password,
   };
 
   const addEvent = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:80/addEvent", data).then((response) => {
+    axios.post("http://localhost:80/register", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -54,83 +61,83 @@ export default function RegistrationPlayer() {
       )}
       {ShowAlert === null && (
         <div>
-          
+
           <div className="register">
-           <form>
-             <h1>Register</h1>
-           <div class="row">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">FullName</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your Full name"
-                                 onChange={(event) => {
-                                 return setGameTitle(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Email</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your email"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-      <div class="row">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Address</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your Address"
-                                 onChange={(event) => {
-                                 return setGameTitle(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Contact Number</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your contact number"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-      <div class="row">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Username</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your username"
-                                 onChange={(event) => {
-                                 return setGameTitle(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Password</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your password"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-           </form>
+            <form>
+              <h1>Register</h1>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <Form.Label for="inputEmail4">FullName</Form.Label>
+                  <Form.Control
+                    type="text" placeholder="Enter your Full name"
+                    onChange={(event) => {
+                      return setFullName(event.target.value);
+                    }} />
+                </div>
+                <div class="form-group col-md-6">
+
+                  <Form.Label for="inputEmail4">Email</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your email"
+                    onChange={(event) => {
+                      return setEmail(event.target.value);
+                    }}
+                  />
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <Form.Label for="inputEmail4">Address</Form.Label>
+                  <Form.Control
+                    type="text" placeholder="Enter your Address"
+                    onChange={(event) => {
+                      return setAddress(event.target.value);
+                    }} />
+                </div>
+                <div class="form-group col-md-6">
+
+                  <Form.Label for="inputEmail4">Contact Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your contact number"
+                    onChange={(event) => {
+                      return setContact(event.target.value);
+                    }}
+                  />
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <Form.Label for="inputEmail4">Username</Form.Label>
+                  <Form.Control
+                    type="text" placeholder="Enter your username"
+                    onChange={(event) => {
+                      return setUsername(event.target.value);
+                    }} />
+                </div>
+                <div class="form-group col-md-6">
+
+                  <Form.Label for="inputEmail4">Password</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your password"
+                    onChange={(event) => {
+                      return setPassword(event.target.value);
+                    }}
+                  />
+
+                </div>
+              </div>
+            </form>
 
             <button
               className="btn btn-primary border border-success registerbtn"
               onClick={addEvent}
             >
-             Register
+              Register
             </button>
           </div>
         </div>
