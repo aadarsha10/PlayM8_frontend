@@ -18,7 +18,7 @@ export default function Login() {
     Password: Password
   };
 
-  const addEvent = (e) => {
+  const loginOrganizer = (e) => {
     e.preventDefault();
 
     axios.post("http://localhost:90/login", data).then((response) => {
@@ -85,7 +85,7 @@ export default function Login() {
 
             <button
               className="btn btn-primary border border-success registerbtn"
-              onClick={addEvent}
+              onClick={loginOrganizer}
             >
              Login
             </button>
@@ -94,7 +94,7 @@ export default function Login() {
       )}
       {ShowAlert === true && (
         <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
+          <h4 className="alert-heading">Hello Organizer. Congratulations!!</h4>
           <p>
             You have Successfully been logged in.
           </p>
