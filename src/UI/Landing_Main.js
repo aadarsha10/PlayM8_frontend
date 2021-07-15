@@ -17,6 +17,7 @@ class Landing_Main extends Component {
                 {/* <Route path='/home' component={Home} /> */}
                 <Route path='/organizer/register' exact component={RegistrationOrganizer} />
                 <Route path='/player/register' exact component={RegistrationPlayer} />
+                <Route path='/login' exact component={} />
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
         )
