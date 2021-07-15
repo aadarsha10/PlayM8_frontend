@@ -14,6 +14,7 @@ export default function Player_login() {
   console.log("gameTitle", GameTitle);
 
   const data = {
+    
     GameTitle: GameTitle,
     Image: "Image.jpg",
     Description: Description,
