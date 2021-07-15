@@ -4,79 +4,74 @@ import "../scss/Registration.scss";
 import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
+import { Link, useHistory } from 'react-router-dom'
 
-export default function RegistrationPlayer() {
-  const [FullName, setFullName] = useState("");
+export default function RegistrationOrganizer() {
+  const [Fullname, setFname] = useState("");
   const [Email, setEmail] = useState("");
-  const [Address, setAddress] = useState("");
   const [Contact, setContact] = useState("");
+  const [Address, setAddress] = useState("");
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
-  const [ShowAlert, setShowAlert] = useState(null);
-  // const [validate, setValidate] = useState(false)
+  const [response1, setResponse] = useState("");
+  const [checkLogin, setLoginCheck] = useState(false);
 
-  console.log("FullName", FullName);
 
-  const data = {
-    FullName: FullName,
-    Email: Email,
-    Address: Address,
-    Contact: Contact,
-    Username: Username,
-    Password: Password,
-  };
+  const registerorganizer = (e) => {
 
-  const addEvent = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    console.log(Fullname, Email, Contact, Username)
+    const data = {
+      fullname: Fullname,
+      contact: Contact,
+      address: Address,
+      email: Email,
+      username: Username,
+      password: Password
+    }
 
-    axios.post("http://localhost:5000/register", data).then((response) => {
-      console.log("response", response);
+    axios.post("http://localhost:5000/organizer/register", data).then(response => {
+      console.log(response.data.message)
+      setResponse(response.data.message)
+      goToLogin()
+    }).catch(error => {
+      console.log(error)
+    })
 
-      if (response.data.message === "Fields Must not be Empty") {
-        setShowAlert(false);
-      } else {
-        alert("Event Added Successfully");
-        setShowAlert(true);
-        console.log("alert", ShowAlert);
-      }
-    });
-  };
+    console.log("response1", response1)
+
+    if (response1 == "Registered") {
+      alert("You have successfully Registered ")
+      setLoginCheck(true);
+    }
+  }
+
+  const history = useHistory()
+  const goToLogin = () => {
+    history.push("/login");
+  }
 
   return (
     <div>
-      <NavBar />
-      {ShowAlert === false && (
-        <div className="alert alert-danger">
-          <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
-          </h4>
-          <p>
-            You have failed to insert correct data. You must fill all the fields
-            in the form
-          </p>
-          <hr></hr>
-
-          <p>Thank You !!!</p>
-        </div>
-      )}
-      {ShowAlert === null && (
+      {
+        !checkLogin &&
         <div>
-
+          <NavBar />
           <div className="register">
             <form>
               <h1>Register</h1>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">FullName</Form.Label>
+                  <Form.Label for="Fullname_input">FullName</Form.Label>
                   <Form.Control
-                    type="text" placeholder="Enter your Full name"
+                    type="text" placeholder="Enter your name"
                     onChange={(event) => {
-                      return setFullName(event.target.value);
+                      return setFname(event.target.value);
                     }} />
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Email</Form.Label>
+                  <Form.Label for="Email_input">Email</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your email"
@@ -89,7 +84,7 @@ export default function RegistrationPlayer() {
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">Address</Form.Label>
+                  <Form.Label for="Address_input">Address</Form.Label>
                   <Form.Control
                     type="text" placeholder="Enter your Address"
                     onChange={(event) => {
@@ -98,9 +93,9 @@ export default function RegistrationPlayer() {
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Contact Number</Form.Label>
+                  <Form.Label for="Email_input">Contact Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Enter your contact number"
                     onChange={(event) => {
                       return setContact(event.target.value);
@@ -111,7 +106,7 @@ export default function RegistrationPlayer() {
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">Username</Form.Label>
+                  <Form.Label for="username_input">Username</Form.Label>
                   <Form.Control
                     type="text" placeholder="Enter your username"
                     onChange={(event) => {
@@ -120,9 +115,9 @@ export default function RegistrationPlayer() {
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Password</Form.Label>
+                  <Form.Label for="password_input">Password</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="password"
                     placeholder="Enter your password"
                     onChange={(event) => {
                       return setPassword(event.target.value);
@@ -135,25 +130,16 @@ export default function RegistrationPlayer() {
 
             <button
               className="btn btn-primary border border-success registerbtn"
-              onClick={addEvent}
-            >
+              onClick={registerorganizer}>
               Register
             </button>
           </div>
         </div>
-      )}
-      {ShowAlert === true && (
-        <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
-          <p>
-            You have Successfully been registered. Please check account
-            section to
-          </p>
-          <hr></hr>
-
-          <p>Thank You !!!</p>
-        </div>
-      )}
+      }
+      {
+        checkLogin &&
+        goToLogin()
+      }
     </div>
   );
 }
