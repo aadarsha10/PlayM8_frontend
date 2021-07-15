@@ -11,50 +11,67 @@ import Image from 'react-bootstrap/Image'
 
 import logo from '../images/tabletennis.jpeg'
 
-export default function NavBar() {
+function NavBar() {
     return (
-        <Navbar bg="light" expand="lg">
+      <nav>
+        <h3>Let's Go</h3>
+        <ul className="nav-links"> 
+          <li>Organizer_login
+          </li>
+          <li>Dashboard_organizer
+          </li>
+        </ul>
+      </nav>
+
+      //   <Navbar bg="light" expand="lg">
           
-        {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
-        <Image src = {logo} alt = "logo" roundedCircle height = "50px" width = "80px"  />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto ">
-          <ul className="navbar-nav ml-auto ">
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2 ml-40x search" />
+      //   {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
+      //   <Image src = {logo} alt = "logo" roundedCircle height = "50px" width = "80px"  />
+      //   <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      //   <Navbar.Collapse id="basic-navbar-nav">
+      //     <Nav className="mr-auto ">
+      //     <ul className="navbar-nav ml-auto ">
+      //     <Form inline>
+      //       <FormControl type="text" placeholder="Search" className="mr-sm-2 ml-40x search" />
            
-          </Form>
-          <Button className="btnsearch">Search</Button>
-          <div className="nav">
-          <li className="nav-item active">
-            <Nav.Link className="nav-link" to="/">Home </Nav.Link>
-          </li>
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/about">Add Events</Nav.Link>
-          </li>
+      //     </Form>
+      //     <Button className="btnsearch">Search</Button>
+      //     <div className="nav">
+      //     <li className="nav-item active">
+      //       <Nav.Link className="nav-link" to="/">Home </Nav.Link>
+      //     </li>
+      //     <li className="nav-item">
+      //       <Nav.Link className="nav-link active" to="/about">Add Events</Nav.Link>
+      //     </li>
 
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/shop">View Events</Nav.Link>
-          </li>
+      //     <li className="nav-item">
+      //       <Nav.Link className="nav-link active" to="/shop">View Events</Nav.Link>
+      //     </li>
 
 
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/AddProduct">Register</Nav.Link>
-          </li>
+      //     <li className="nav-item">
+      //       <Nav.Link className="nav-link active" to="/AddProduct">Register</Nav.Link>
+      //     </li>
 
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/AddProduct">Login</Nav.Link>
-          </li>
-          </div>
+      //     <li className="nav-item">
+      //       <Nav.Link className="nav-link active" to="/AddProduct">Login</Nav.Link>
+      //     </li>
+      //     <li className="nav-item">
+      //       <Nav.Link className="nav-link active" to="/AddProduct">Dashboard</Nav.Link>
+      //     </li>
+      //     </div>
 
-          </ul>
+      //     </ul>
           
 
 
     
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    )
+      //     </Nav>
+      //   </Navbar.Collapse>
+      // </Navbar>
+    );
 }
+
+export default NavBar;
+
+
