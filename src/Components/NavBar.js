@@ -50,8 +50,6 @@ export default function NavBar() {
 
           </ul>
           
-
-
     
           </Nav>
         </Navbar.Collapse>
