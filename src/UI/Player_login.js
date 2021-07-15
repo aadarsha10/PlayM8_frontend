@@ -5,7 +5,7 @@ import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
-export default function Registration() {
+export default function Player_login() {
   const [GameTitle, setGameTitle] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
