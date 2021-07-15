@@ -29,7 +29,7 @@ export default function RegistrationPlayer() {
   const addEvent = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:5000/register", data).then((response) => {
+    axios.post("http://localhost:90/register", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -67,7 +67,7 @@ export default function RegistrationPlayer() {
               <h1>Register</h1>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">FullName</Form.Label>
+                  <Form.Label for="inputFullname">FullName</Form.Label>
                   <Form.Control
                     type="text" placeholder="Enter your Full name"
                     onChange={(event) => {
@@ -76,7 +76,7 @@ export default function RegistrationPlayer() {
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Email</Form.Label>
+                  <Form.Label for="inputEmail">Email</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your email"
@@ -89,7 +89,7 @@ export default function RegistrationPlayer() {
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">Address</Form.Label>
+                  <Form.Label for="inputAddress">Address</Form.Label>
                   <Form.Control
                     type="text" placeholder="Enter your Address"
                     onChange={(event) => {
@@ -98,7 +98,7 @@ export default function RegistrationPlayer() {
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Contact Number</Form.Label>
+                  <Form.Label for="inputContact">Contact Number</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your contact number"
@@ -111,7 +111,7 @@ export default function RegistrationPlayer() {
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
-                  <Form.Label for="inputEmail4">Username</Form.Label>
+                  <Form.Label for="inputUsername">Username</Form.Label>
                   <Form.Control
                     type="text" placeholder="Enter your username"
                     onChange={(event) => {
@@ -120,7 +120,7 @@ export default function RegistrationPlayer() {
                 </div>
                 <div class="form-group col-md-6">
 
-                  <Form.Label for="inputEmail4">Password</Form.Label>
+                  <Form.Label for="inputPassword">Password</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your password"
