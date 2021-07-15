@@ -63,8 +63,6 @@ function NavBar() {
 
       //     </ul>
           
-
-
     
       //     </Nav>
       //   </Navbar.Collapse>
