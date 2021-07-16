@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
-import "../scss/Registration.scss";
-import { Form } from "react-bootstrap";
+import {Form, Row, Col} from "react-bootstrap";
+import "../scss/Registration.scss"
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 import { Link, useHistory } from 'react-router-dom'
 
-export default function RegistrationOrganizer() {
+const RegistrationOrganizer = () => {
   const [Fullname, setFname] = useState("");
   const [Email, setEmail] = useState("");
   const [Contact, setContact] = useState("");
@@ -17,33 +17,43 @@ export default function RegistrationOrganizer() {
   const [checkLogin, setLoginCheck] = useState(false);
 
 
+  console.log("fullname", Fullname)
+
   const registerorganizer = (e) => {
 
     e.preventDefault()
     console.log(Fullname, Email, Contact, Username)
     const data = {
-      fullname: Fullname,
-      contact: Contact,
-      address: Address,
-      email: Email,
-      username: Username,
-      password: Password
+      Fullname: Fullname,
+      Contact: Contact,
+      Address: Address,
+      Email: Email,
+      Username: Username,
+      Password: Password
     }
 
-    axios.post("http://localhost:5000/organizer/register", data).then(response => {
-      console.log(response.data.message)
-      setResponse(response.data.message)
-      goToLogin()
+    console.log("data", data)
+
+    axios.post("http://localhost:90/organizer/register", data).then(response => {
+      console.log("response", response.data.message)
+     
+      if (response.data.message == "Registered") {
+        alert("You have successfully Registered ")
+        setLoginCheck(true);
+      }
+
+      else{
+          alert(response.data.message)
+      }
+      
+    //   goToLogin()
     }).catch(error => {
       console.log(error)
     })
 
-    console.log("response1", response1)
-
-    if (response1 == "Registered") {
-      alert("You have successfully Registered ")
-      setLoginCheck(true);
-    }
+    
+    
+   
   }
 
   const history = useHistory()
@@ -53,93 +63,112 @@ export default function RegistrationOrganizer() {
 
   return (
     <div>
+
+        <NavBar />
+        <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary">
+        Organizer Registration
+      </span>
       {
         !checkLogin &&
-        <div>
-          <NavBar />
-          <div className="register">
-            <form>
-              <h1>Register</h1>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <Form.Label for="Fullname_input">FullName</Form.Label>
-                  <Form.Control
-                    type="text" placeholder="Enter your name"
+
+        <div className = "container border border-success pt-10x pb-10x pr-10x pl-10x" >
+        
+            <Form>
+                            <Row className="mb-3">
+                    <Form.Group as = {Col} controlId="Email">
+                        <Col md="auto">
+                        <Form.Label className = "label">Full Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Player Full Name"
+                            onChange={(event) => {
+                                return setFname(event.target.value);
+                            }}
+                        />
+                    </Col>
+                   
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="contact">
+                    <Col md="auto">
+                    <Form.Label className = "label">Contact</Form.Label>
+                    <Form.Control type="number" placeholder="Contact Number"  
                     onChange={(event) => {
-                      return setFname(event.target.value);
-                    }} />
-                </div>
-                <div class="form-group col-md-6">
+                                return setContact(event.target.value);
+                            }} />
+                    </Col>
+                    </Form.Group>
+                </Row>
 
-                  <Form.Label for="Email_input">Email</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter your email"
-                    onChange={(event) => {
-                      return setEmail(event.target.value);
-                    }}
-                  />
+                            <Form.Group className="mb-3" controlId="Address">
+                <Form.Label className = "label">Address</Form.Label>
+                <Form.Control placeholder="Street, City"
+                 onChange={(event) => {
+                    return setAddress(event.target.value);
+                }} />
+            </Form.Group>
 
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <Form.Label for="Address_input">Address</Form.Label>
-                  <Form.Control
-                    type="text" placeholder="Enter your Address"
-                    onChange={(event) => {
-                      return setAddress(event.target.value);
-                    }} />
-                </div>
-                <div class="form-group col-md-6">
+            <Form.Group className="mb-3" controlId="Address">
+                <Col sm = {5}>
+                <Form.Label className = "label">Email</Form.Label>
+                <Form.Control placeholder="Enter Your Email" 
+                 onChange={(event) => {
+                    return setEmail(event.target.value);
+                }}/>
+                </Col>
+               
+            </Form.Group>
 
-                  <Form.Label for="Email_input">Contact Number</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder="Enter your contact number"
-                    onChange={(event) => {
-                      return setContact(event.target.value);
-                    }}
-                  />
+            <Row className="mb-3">
+                    <Form.Group as = {Col} controlId="Username">
+                        <Col md="auto">
+                        <Form.Label className = "label">Username</Form.Label>
+                    <Form.Control type="text" placeholder="Enter your Username" 
+                     onChange={(event) => {
+                        return setUsername(event.target.value);
+                    }}/>
+                    </Col>
+                   
+                    </Form.Group>
 
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <Form.Label for="username_input">Username</Form.Label>
-                  <Form.Control
-                    type="text" placeholder="Enter your username"
-                    onChange={(event) => {
-                      return setUsername(event.target.value);
-                    }} />
-                </div>
-                <div class="form-group col-md-6">
+                    <Form.Group as={Col} controlId="contact">
+                    <Col md="auto">
+                    <Form.Label className = "label">Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" 
+                     onChange={(event) => {
+                        return setPassword(event.target.value);
+                    }}/>
+                    </Col>
+                    </Form.Group>
+                </Row>
 
-                  <Form.Label for="password_input">Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Enter your password"
-                    onChange={(event) => {
-                      return setPassword(event.target.value);
-                    }}
-                  />
+            <Row>
+                <Col sm = {12} className = "flex flex-center">
+                <button
+          className="btn btn-primary border border-success" onClick = {registerorganizer}
+          
+        >
+          Register
+        </button></Col>
+            
+            </Row>
+                
 
-                </div>
-              </div>
-            </form>
+            </Form>
 
-            <button
-              className="btn btn-primary border border-success registerbtn"
-              onClick={registerorganizer}>
-              Register
-            </button>
-          </div>
+           
+
         </div>
+       
       }
       {
         checkLogin &&
         goToLogin()
       }
     </div>
-  );
-}
+  )
+};
+
+export default RegistrationOrganizer;
+
+
