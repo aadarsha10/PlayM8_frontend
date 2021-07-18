@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/Registration.scss";
 import { Form } from "react-bootstrap";
-// import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export default function RegistrationOrganizer() {
   const [Fullname, setFname] = useState("");
@@ -30,7 +29,7 @@ export default function RegistrationOrganizer() {
       password: Password
     }
 
-    axios.post("http://localhost:5000/organizer/register", data).then(response => {
+    axios.post("http://localhost:90/organizer/register", data).then(response => {
       console.log(response.data.message)
       setResponse(response.data.message)
       goToLogin()
@@ -140,6 +139,10 @@ export default function RegistrationOrganizer() {
         checkLogin &&
         goToLogin()
       }
+      {/* <div>
+        <Footer></Footer>
+      </div> */}
     </div>
+
   );
 }

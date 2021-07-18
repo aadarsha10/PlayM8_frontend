@@ -21,7 +21,7 @@ export default function Login() {
   const loginOrganizer = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:90/login", data).then((response) => {
+    axios.post("http://localhost:90/organizer/login", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {

@@ -4,6 +4,7 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import RegistrationPlayer from '../Authentication/RegistrationPlayer';
 import RegistrationOrganizer from '../Authentication/RegistrationOrganizer';
 import Login from './Organizer_login';
+import Landing from './Landing/Landing';
 
 
 class Landing_Main extends Component {
@@ -15,12 +16,13 @@ class Landing_Main extends Component {
             // <Route path='/register' component={Register}></Route>
             // </Switch> */}
             <div>
-                {/* <Route path='/home' component={Home} /> */}
+                <Route path='/home' component={Landing} />
                 <Route path='/organizer/register' exact component={RegistrationOrganizer} />
                 <Route path='/player/register' exact component={RegistrationPlayer} />
                 <Route path='/login' exact component={Login} />
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
             </div>
+
         )
 
     }

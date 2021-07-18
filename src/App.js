@@ -7,13 +7,13 @@ import Footer from "./Components/Footer";
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main';
+import { Navbar } from 'react-bootstrap';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App">  
         <Landing_Main></Landing_Main>
-        <Footer />
       </div>
     </BrowserRouter>
 
