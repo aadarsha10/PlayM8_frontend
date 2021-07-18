@@ -12,8 +12,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Landing_Main></Landing_Main>
-        <Footer />
+        <Landing_Main/>
+        </div>
+        <div>
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
 
