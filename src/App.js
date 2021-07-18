@@ -42,9 +42,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+<<<<<<< HEAD
         <Landing_Main></Landing_Main>
         <Footer />
         
+=======
+        <Landing_Main/>
+        </div>
+        <div>
+        {/* <Footer /> */}
+>>>>>>> 7c56b537b79a278f72ce0d344313149adb153539
       </div>
     </BrowserRouter>
 
