@@ -104,5 +104,9 @@ export default function PlayerLogin() {
         </div>
       )}
     </div>
-  );
+
+  )
+  ;
 }
+
+
