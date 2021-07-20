@@ -21,7 +21,7 @@ export default function Login() {
   const loginOrganizer = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:90/login", data).then((response) => {
+    axios.post("http://localhost:90/organizer/login", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -59,7 +59,7 @@ export default function Login() {
              <h1>Login</h1>
            <div class="login">
                    <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Username</Form.Label>
+                            <Form.Label for="inputUsername">Username</Form.Label>
                               <Form.Control
                                 type="text"  placeholder="Enter your Username"
                                  onChange={(event) => {
@@ -68,7 +68,7 @@ export default function Login() {
                    </div>
                    <div class="form-group col-md-6">
       
-      <Form.Label for="inputEmail4">Password</Form.Label>
+      <Form.Label for="inputPassword">Password</Form.Label>
     <Form.Control
                   type="text"
                   placeholder="Enter your password"

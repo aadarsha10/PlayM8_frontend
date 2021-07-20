@@ -6,24 +6,20 @@ import { Form } from "react-bootstrap";
 import axios from "axios";
 
 export default function Player_login() {
-  const [GameTitle, setGameTitle] = useState("");
-  const [Description, setDescription] = useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
   // const [validate, setValidate] = useState(false)
 
-  console.log("gameTitle", GameTitle);
-
   const data = {
-    
-    GameTitle: GameTitle,
-    Image: "Image.jpg",
-    Description: Description,
+    Username: Username,
+    Password: Password
   };
 
-  const addEvent = (e) => {
+  const LoginPlayer = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:80/addEvent", data).then((response) => {
+    axios.post("http://localhost:90/player/login", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -42,7 +38,7 @@ export default function Player_login() {
       {ShowAlert === false && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
+            Hello Player. Sorry to Say THAT !!
           </h4>
           <p>
             You have failed to insert correct data. You must fill all the fields
@@ -58,58 +54,14 @@ export default function Player_login() {
           
           <div className="register">
            <form>
-             <h1>Register</h1>
-           <div class="row">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">FullName</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your Full name"
-                                 onChange={(event) => {
-                                 return setGameTitle(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Email</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your email"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-      <div class="row">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Address</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your Address"
-                                 onChange={(event) => {
-                                 return setGameTitle(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Contact Number</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your contact number"
-                  onChange={(event) => {
-                    return setGameTitle(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-      <div class="row">
+             <h1>Login</h1>
+           <div class="login">
                    <div class="form-group col-md-6">
                             <Form.Label for="inputEmail4">Username</Form.Label>
                               <Form.Control
-                                type="text"  placeholder="Enter your username"
+                                type="text"  placeholder="Enter your Username"
                                  onChange={(event) => {
-                                 return setGameTitle(event.target.value);
+                                 return setUsername(event.target.value);
                                 }}/>
                    </div>
                    <div class="form-group col-md-6">
@@ -119,29 +71,30 @@ export default function Player_login() {
                   type="text"
                   placeholder="Enter your password"
                   onChange={(event) => {
-                    return setGameTitle(event.target.value);
+                    return setPassword(event.target.value);
                   }}
                 />
       
       </div>
       </div>
+      
+   
            </form>
 
             <button
               className="btn btn-primary border border-success registerbtn"
-              onClick={addEvent}
+              onClick={LoginPlayer}
             >
-             Register
+             Login
             </button>
           </div>
         </div>
       )}
       {ShowAlert === true && (
         <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
+          <h4 className="alert-heading">Hello Player. Congratulations!!</h4>
           <p>
-            You have Successfully been registered. Please check account
-            section to
+            You have Successfully been logged in.
           </p>
           <hr></hr>
 
