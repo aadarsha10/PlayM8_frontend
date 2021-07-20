@@ -14,6 +14,7 @@ const RegistrationOrganizer = () => {
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
   const [response1, setResponse] = useState("");
+  const [validationError, setError] = useState("")
   const [checkLogin, setLoginCheck] = useState(false);
 
 
@@ -43,7 +44,10 @@ const RegistrationOrganizer = () => {
       }
 
       else{
-          alert(response.data.message)
+          const valerror = response.data.message
+          setError(valerror)
+          console.log("Errorrrrr", validationError)
+        //   alert(response.data.message)
       }
       
     //   goToLogin()
