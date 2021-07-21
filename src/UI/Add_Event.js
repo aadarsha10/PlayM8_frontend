@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
+import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
 import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
-export default function AddEvents() {
+export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
@@ -19,7 +19,7 @@ export default function AddEvents() {
     Description: Description,
   };
 
-  const addEvent = (e) => {
+  const Add_Event = (e) => {
     e.preventDefault();
 
     axios.post("http://localhost:80/addEvent", data).then((response) => {
@@ -104,7 +104,7 @@ export default function AddEvents() {
 
             <button
               className="btn btn-primary border border-success"
-              onClick={addEvent}
+              onClick={Add_Event}
             >
               Add Event
             </button>
@@ -126,3 +126,4 @@ export default function AddEvents() {
     </div>
   );
 }
+ 
