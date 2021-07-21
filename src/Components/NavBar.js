@@ -31,7 +31,7 @@ export default function NavBar() {
             <Nav.Link className="nav-link" to="/">Home </Nav.Link>
           </li>
           <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/about">Add Events</Nav.Link>
+            <Nav.Link className="nav-link active" to="/Add_Event">Add Events</Nav.Link>
           </li>
 
           <li className="nav-item">
