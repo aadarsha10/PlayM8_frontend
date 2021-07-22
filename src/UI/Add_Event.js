@@ -7,6 +7,7 @@ import axios from "axios";
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
+  const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
   // const [validate, setValidate] = useState(false)
@@ -15,6 +16,7 @@ export default function Add_Event() {
 
   const data = {
     GameTitle: GameTitle,
+    GameType:GameType,
     Image: "Image.jpg",
     Description: Description,
   };
@@ -54,15 +56,21 @@ export default function Add_Event() {
       )}
       {ShowAlert === null && (
         <div>
-          <span className="flex flex-center fs-20 mb-20x font-upper font-primary">
-            Fill Up The Form
+          <span className="container-fluid">
+           
           </span>
-          <div className="container addEvents border border-success">
+          <div className="row con">
+            <div className="cont">
+              </div>
+          <div className="container">
             <Form>
+              <div className="title">
+            <h3>Add your Event</h3>
+            </div>
                 
-                
+            <div className="holder">
               <Form.Group controlId="">
-                <Form.Label>Game Title</Form.Label>
+                <p>Enter the Title of your event</p>
                 <Form.Control
                   type="text"
                   placeholder="Title of your Event"
@@ -71,24 +79,30 @@ export default function Add_Event() {
                   }}
                 />
               </Form.Group>
+              </div>
+              <div className="holder">
               <Form.Group controlId="">
-                <Form.Label>Game Type</Form.Label>
+               <p>Choose the type of the game for the event</p>
                 <Form.Control
                   type="text"
                   placeholder="Enter the game type"
                   onChange={(event) => {
-                    return setGameTitle(event.target.value);
+                    return setGameType(event.target.value);
                   }}
                 />
               </Form.Group>
-
+              </div>
+              
+              <div className="holder">
               <Form.Group>
-                <Form.File id="" label="Select Image For Title" />
-                <span className="suggestion-text">
-                  Please choose in jpg Format
-                </span>
+              <Form.Label>Select poster For event</Form.Label>
+              <div className="poster">
+                <Form.File id="" label=""  />
+                </div>
               </Form.Group>
+              </div>
 
+              <div className="holder">
               <Form.Group controlId="">
                 <Form.Label>Description</Form.Label>
                 <Form.Control
@@ -100,14 +114,16 @@ export default function Add_Event() {
                   }}
                 />
               </Form.Group>
+              </div>
             </Form>
 
-            <button
-              className="btn btn-primary border border-success"
+            <button 
+              className="btn  border border-success"
               onClick={Add_Event}
             >
               Add Event
             </button>
+          </div>
           </div>
         </div>
       )}

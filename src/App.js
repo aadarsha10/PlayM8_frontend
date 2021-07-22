@@ -7,13 +7,13 @@ import Footer from "./Components/Footer";
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main'
-// import Add_Event from './UI/Add_Event';
+import Add_Event from './UI/Add_Event';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Landing_Main/>
+        <Add_Event/>
         </div>
         <div>
         {/* <Footer /> */}

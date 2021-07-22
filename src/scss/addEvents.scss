@@ -1,14 +1,38 @@
-.addEvents {
-
+.container {
+    width:600px;
+    background-color: #F4F6F5;
+    
     
 }
 
 .suggestion-text {
     color: lightgrey;
 }
-
-.btn-primary {
-    float : left;
+.cont{
+   
+    background-color: aqua;
+    width: 400px;
+    height: 650px;
+}
+.holder{
     margin-bottom: 30px;
-   align-items: center;
+}
+.poster{
+    background-color:rgb(252, 252, 252);
+}
+.title
+{
+    text-decoration-style: solid;
+    margin-bottom: 50px;
+}
+
+.con{
+    background-color: #F4F6F5;
+    margin-left: 100px;
+    width: 1100px;
+    height: 700px;
+    border-style: outset;
+    border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
 }
