@@ -9,6 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main'
 import Add_Event from './UI/Add_Event';
 
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,9 +19,10 @@ function App() {
         <Landing_Main/>
         {/* <Footer/> */}
         </div>
-        <div>
-        {/* <Footer /> */}
-      </div>
+       
+        {/* <div>
+        <Footer />
+      </div> */}
     </BrowserRouter>
 
   );
