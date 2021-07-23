@@ -21,7 +21,7 @@ export default function Login() {
   const loginOrganizer = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:90/login", data).then((response) => {
+    axios.post("http://localhost:90/organizer/login", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -38,7 +38,7 @@ export default function Login() {
     <div>
       <NavBar />
       {ShowAlert === false && (
-        <div className="alert alert-danger">
+        <div className="alert alert-danger container-fluid">
           <h4 className="alert-heading">
             Hello Oraganizer. Sorry to Say THAT !!
           </h4>
@@ -52,23 +52,24 @@ export default function Login() {
         </div>
       )}
       {ShowAlert === null && (
-        <div>
+        <div className="container">
+          <div className="row">
           
-          <div className="register">
+          <div className="register container-fluid">
            <form>
-             <h1>Login</h1>
+             <h1 style={{ color: '#23978e', fontWeight: 'bolder' }}>Login</h1>
            <div class="login">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Username</Form.Label>
+                   <div class="form-group">
+                            <Form.Label for="inputUsername">Username</Form.Label>
                               <Form.Control
                                 type="text"  placeholder="Enter your Username"
                                  onChange={(event) => {
                                  return setUsername(event.target.value);
                                 }}/>
                    </div>
-                   <div class="form-group col-md-6">
+                   <div class="form-group">
       
-      <Form.Label for="inputEmail4">Password</Form.Label>
+      <Form.Label for="inputPassword">Password</Form.Label>
     <Form.Control
                   type="text"
                   placeholder="Enter your password"
@@ -78,17 +79,23 @@ export default function Login() {
                 />
       
       </div>
+      
+     
       </div>
       
-   
-           </form>
-
-            <button
-              className="btn btn-primary border border-success registerbtn"
+      <div class="form-group">
+      <button
+             style={{ backgroundColor: '#23978e', border:'none'}} className="btn btn-primary border border-success registerbtn"
               onClick={loginOrganizer}
             >
              Login
             </button>
+            </div>
+          
+
+           
+            </form>
+            </div>
           </div>
         </div>
       )}
