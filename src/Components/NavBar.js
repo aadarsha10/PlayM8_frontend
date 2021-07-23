@@ -2,15 +2,16 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap/Form'
+// import NavDropdown from 'react-bootstrap/NavDropdown'
+// import Form from 'react-bootstrap/Form'
 import "../scss/nav.scss";
-import FormControl from 'react-bootstrap/FormControl'
+// import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import './NavBar.css'
 
 import logo from '../images/tabletennis.jpeg'
+import {Link} from 'react-router-dom'
 
 export default function NavBar() {
     return (
@@ -46,6 +47,10 @@ export default function NavBar() {
 
           <li className="nav-item">
             <Button className="btn btn-primary"><Nav.Link className="nav-link active" href="/organizer/login">Login</Nav.Link></Button>
+            <Nav className="nav-link active" to="/organizer/register">Register</Nav>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" to="/admin/dashboard">Admin_dashboard</Link>
           </li>
           </div>
 

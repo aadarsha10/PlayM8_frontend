@@ -36,7 +36,7 @@ export default function Player_login() {
     <div>
       <NavBar />
       {ShowAlert === false && (
-        <div className="alert alert-danger">
+        <div className="alert alert-danger container">
           <h4 className="alert-heading">
             Hello Player. Sorry to Say THAT !!
           </h4>
@@ -51,42 +51,43 @@ export default function Player_login() {
       )}
       {ShowAlert === null && (
         <div>
-          
-          <div className="register">
-           <form>
-             <h1>Login</h1>
-           <div class="login">
-                   <div class="form-group col-md-6">
-                            <Form.Label for="inputEmail4">Username</Form.Label>
-                              <Form.Control
-                                type="text"  placeholder="Enter your Username"
-                                 onChange={(event) => {
-                                 return setUsername(event.target.value);
-                                }}/>
-                   </div>
-                   <div class="form-group col-md-6">
-      
-      <Form.Label for="inputEmail4">Password</Form.Label>
-    <Form.Control
-                  type="text"
-                  placeholder="Enter your password"
-                  onChange={(event) => {
-                    return setPassword(event.target.value);
-                  }}
-                />
-      
-      </div>
-      </div>
-      
-   
-           </form>
 
-            <button
-              className="btn btn-primary border border-success registerbtn"
-              onClick={LoginPlayer}
-            >
-             Login
-            </button>
+          <div className="register container">
+            <form>
+              <h1 style={{ color: '#23978e', fontWeight: 'bolder' }}>Login</h1>
+              <div class="login container">
+                <div class="form-group">
+                  <Form.Label for="inputEmail4">Username</Form.Label>
+                  <Form.Control
+                    type="text" placeholder="Enter your Username"
+                    onChange={(event) => {
+                      return setUsername(event.target.value);
+                    }} />
+                </div>
+                <div class="form-group">
+
+                  <Form.Label for="inputEmail4">Password</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your password"
+                    onChange={(event) => {
+                      return setPassword(event.target.value);
+                    }}
+                  />
+
+                </div>
+              </div>
+
+
+              <div className="text-center">
+
+                <button className="btn btn-primary registerbtn text-center mb-3" style={{ backgroundColor: '#23978e', border: 'none' }} onClick={LoginPlayer}>
+                  Login
+                </button>
+              </div>
+
+            </form>
+
           </div>
         </div>
       )}
