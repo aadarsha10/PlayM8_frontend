@@ -3,7 +3,7 @@ import {Table, Button} from 'react-bootstrap'
 import NavBar from '../Components/NavBar'
 import Footer from '../Components/Footer'
 
-class Dashboard_organizer extends react.Component{
+class Dashboard_admin extends react.Component{
     render(){
         return (
             <div>
@@ -11,7 +11,7 @@ class Dashboard_organizer extends react.Component{
           
             
             <div className="container shadow mt-4">
-                <p><Button className="mt-3" variant="primary">Welcome to dashboard</Button></p>
+                <p><Button className="mt-3" variant="primary">Welcome to admin dashboard</Button></p>
                <Table striped bordered hover>
   <thead>
     <tr>
@@ -52,4 +52,4 @@ class Dashboard_organizer extends react.Component{
         )
     }
 }
-export default Dashboard_organizer
+export default Dashboard_admin
