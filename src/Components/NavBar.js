@@ -47,7 +47,7 @@ export default function NavBar() {
             <Link className="nav-link active" to="/player/login">Login</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link active" to="/organizer/dashboard">Admin_dashboard</Link>
+            <Link className="nav-link active" to="/admin/dashboard">Admin_dashboard</Link>
           </li>
           </div>
 
