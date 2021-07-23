@@ -7,7 +7,8 @@ import Footer from "./Components/Footer";
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main';
-import Landing  from './UI/Landing/Landing'
+
+
 
 function App() {
   return (
@@ -15,12 +16,10 @@ function App() {
       <div className="App">
         <Landing_Main/>
         </div>
-        <div>
-          <Landing/>
-        </div>
-        <div>
+       
+        {/* <div>
         <Footer />
-      </div>
+      </div> */}
     </BrowserRouter>
 
   );

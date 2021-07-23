@@ -1,0 +1,26 @@
+
+/* .btnsearch{
+
+   margin-left: 82px; 
+/* 
+}  */
+
+
+
+.nav-link{
+    margin-left: 80px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+    
+    
+    
+} 
+.nav-link.active {
+    
+    font-size: 20px;
+    color: rgba(211, 230, 219, 0.9);
+    
+}
+

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Landing/landing.css'
+import NavBar from '../../Components/NavBar';
+import Footer from '../../Components/Footer';
+
 
 
 class Landing extends Component {
@@ -8,6 +11,7 @@ class Landing extends Component {
         return (
            
           <div>
+              <NavBar></NavBar>
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content />
@@ -18,23 +22,7 @@ class Landing extends Component {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
   {/* Core theme CSS (includes Bootstrap)*/}
   <link href="css/styles.css" rel="stylesheet" />
-  {/* Responsive navbar*/}
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div className="container px-5">
-     <img className="img-fluid rounded-circle" src="./images/tabletennis.jpeg" height="100px" width="100px"   alt="logo"/>
-       {/* <a className="navbar-brand" href="/logo"><b>PM8</b></a> */}
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon" /></button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li className="nav-item"><a className="nav-link active" aria-current="page" href="/home"><b>Home</b></a></li>
-          <li className="nav-item"><a className="nav-link" href="/sign"><b>Sign In</b></a></li>
-          <li className="nav-item"><a className="nav-link" href="/signup"><b>SignUp</b></a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-  {/* Header*/}
+
   <header className="bg-success py-5">
     <div className="container px-5">
       <div className="row gx-5 justify-content-center">
@@ -43,8 +31,8 @@ class Landing extends Component {
             <h1 className="display-5 fw-bolder text-white mb-2"> Solve your toughest problems as a sports manager </h1>
             <p className="lead text-white-50 mb-4"> Spend your time growing your organization. Not on paperwork or clunky software. Let our solutions make your life easier.  </p>
             <div className="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <a className="btn btn-primary btn-lg px-4 me-sm-3" href="/getstarted">Get Started</a>
-              <a className="btn btn-outline-light btn-lg px-4" href="/learnmore">Learn More</a>
+              <a className="btn btn-primary btn-lg px-4 me-sm-3" href="#">Get Started</a>
+              
             </div>
           </div>
         </div>
@@ -89,7 +77,7 @@ class Landing extends Component {
   <section className="bg-light py-5 border-bottom">
     <div className="container px-5 my-5">
       <div className="text-center mb-5">
-        <h2 className="fw-bolder">PM8</h2>
+        <h2 className="fw-bolder">Play M8</h2>
         <p className="lead mb-0"><b>Helps you to create schedule,events of sports in an easy and fast way......</b></p>
       </div>
       <div className="row gx-5 justify-content-center">
@@ -97,7 +85,7 @@ class Landing extends Component {
         <div className="col-lg-6 col-xl-4">
               <div className="small text-uppercase fw-bold text-muted">Table tennis</div>
               <div className="mb-3" >
-              <img className="img-fluid" src="images/img1.jpg" alt />
+              <img className="img-fluid" src="images/img1.jpg" width="1000px"  alt />
               </div>
         </div>
 
@@ -106,7 +94,7 @@ class Landing extends Component {
           
               <div className="small text-uppercase fw-bold text-muted">Boxing</div>
               <div className="mb-3" >
-              <img className="img-fluid" src="images/img2.jpg" width="1000px" alt />
+              <img className="img-fluid" src="images/img2.jpg"  width="1000px" alt />
               </div>
           </div>
         
@@ -161,7 +149,7 @@ class Landing extends Component {
     </div>
   </section>
   
-
+<Footer></Footer>
 </div>
 
             
