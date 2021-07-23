@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Add_Event/>
+        <Landing_Main/>
         </div>
         <div>
         {/* <Footer /> */}
