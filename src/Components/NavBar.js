@@ -42,15 +42,14 @@ export default function NavBar() {
  */}
 
           <li className="nav-item">
-            <Button variant="light"><Nav.Link className="nav-link active" href="/organizer/register">Register</Nav.Link></Button>
+            <Button variant="light"><Nav.Link className="nav-link active" href="../organizer/register">Register</Nav.Link></Button>
           </li>
 
           <li className="nav-item">
-            <Button className="btn btn-primary"><Nav.Link className="nav-link active" href="/organizer/login">Login</Nav.Link></Button>
-            <Nav className="nav-link active" to="/organizer/register">Register</Nav>
+            <Button className="btn btn-primary"><Nav.Link className="nav-link active" href="../organizer/login">Login</Nav.Link></Button>
           </li>
           <li className="nav-item">
-            <Link className="nav-link active" to="/admin/dashboard">Admin_dashboard</Link>
+            <Link className="nav-link active" to="../admin/dashboard">Admin_dashboard</Link>
           </li>
           </div>
 

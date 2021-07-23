@@ -38,7 +38,7 @@ const RegistrationOrganizer = () => {
       .then((response) => {
         console.log("response", response.data.message);
 
-        if (response.data.message == "Request sent") {
+        if (response.data.message === "Request sent") {
           alert("Your request for registration has been sent");
           // setLoginCheck(true);
         } else {
