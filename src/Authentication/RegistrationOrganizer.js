@@ -34,7 +34,7 @@ const RegistrationOrganizer = () => {
 
     console.log("data", data)
 
-    axios.post("http://localhost:90/organizer/register", data).then(response => {
+    axios.post("/organizer/register", data).then(response => {
       console.log("response", response.data.message)
      
       if (response.data.message == "Registered") {
@@ -58,7 +58,7 @@ const RegistrationOrganizer = () => {
 
   const history = useHistory()
   const goToLogin = () => {
-    history.push("/login");
+    history.push("/organizer/login");
   }
 
   return (

@@ -5,6 +5,7 @@ import RegistrationPlayer from '../Authentication/RegistrationPlayer';
 import RegistrationOrganizer from '../Authentication/RegistrationOrganizer';
 import LoginOrganizer from '../UI/Organizer_login';
 import LoginPlayer from '../UI/Player_login';
+import Landing from './Landing/Landing';
 
 
 class Landing_Main extends Component {
@@ -16,7 +17,7 @@ class Landing_Main extends Component {
             // <Route path='/register' component={Register}></Route>
             // </Switch> */}
             <div>
-                <Route path='/home' component={Landing} />
+                {/* <Route path='/' component={Landing} /> */}
                 <Route path='/organizer/register' exact component={RegistrationOrganizer} />
                 <Route path='/player/register' exact component={RegistrationPlayer} />
                 <Route path='/organizer/login' exact component={LoginOrganizer} />
