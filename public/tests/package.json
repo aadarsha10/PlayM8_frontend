@@ -1,14 +1,19 @@
 {
   "name": "tests",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
+  "devDependencies": {},
   "dependencies": {
-    "cucumber": "^7.0.0-rc.0"
+    "cucumber": "^7.0.0-rc.0",
+    "chai": "^4.2.0",
+    "chromedriver": "^91.0.1",
+    "selenium-webdriver": "^4.0.0-alpha.8"
   }
 }
