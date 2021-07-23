@@ -75,7 +75,7 @@ const RegistrationOrganizer = () => {
                   <Form.Label className="label">Full Name</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Player Full Name"
+                    placeholder="Enter Your Full Name"
                     onChange={(event) => {
                       return setFname(event.target.value);
                     }}
