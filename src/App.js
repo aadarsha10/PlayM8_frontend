@@ -13,7 +13,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+       
         <Landing_Main/>
+        {/* <Footer/> */}
         </div>
         <div>
         {/* <Footer /> */}

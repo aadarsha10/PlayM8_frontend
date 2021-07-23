@@ -8,8 +8,8 @@ import "../scss/nav.scss";
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
-
 import logo from '../images/tabletennis.jpeg'
+import {Link} from 'react-router-dom'
 
 export default function NavBar() {
     return (
@@ -28,23 +28,26 @@ export default function NavBar() {
           <Button className="btnsearch">Search</Button>
           <div className="nav">
           <li className="nav-item active">
-            <Nav.Link className="nav-link" to="/">Home </Nav.Link>
+            <Nav className="nav-link" to="/">Home </Nav>
           </li>
           <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/Add_Event">Add Events</Nav.Link>
-          </li>
-
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/shop">View Events</Nav.Link>
-          </li>
-
-
-          <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/AddProduct">Register</Nav.Link>
+            <Nav className="nav-link active" to="/Add_Event">Add Events</Nav>
           </li>
 
           <li className="nav-item">
-            <Nav.Link className="nav-link active" to="/AddProduct">Login</Nav.Link>
+            <Nav className="nav-link active" to="/shop">View Events</Nav>
+          </li>
+
+
+          <li className="nav-item">
+            <Nav className="nav-link active" to="/organizer/register">Register</Nav>
+          </li>
+
+          <li className="nav-item">
+            <Link className="nav-link active" to="/player/login">Login</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" to="/organizer/dashboard">Admin_dashboard</Link>
           </li>
           </div>
 

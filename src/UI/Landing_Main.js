@@ -24,6 +24,8 @@ class Landing_Main extends Component {
                 <Route path='/player/login' exact component={LoginPlayer} />
                 <Route path='/AddEvent' exact component={Add_Event} />
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
+  
+
             </div>
         )
 
