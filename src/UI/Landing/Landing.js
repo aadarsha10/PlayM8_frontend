@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Landing/landing.css'
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
+import LandingNavbar from '../../Components/LandingNavbar';
 
 
 
@@ -11,7 +12,7 @@ class Landing extends Component {
         return (
            
           <div>
-              <NavBar></NavBar>
+              <LandingNavbar/>
   <meta charSet="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content />

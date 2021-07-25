@@ -27,22 +27,23 @@ export default function AdminDashboard() {
           </Button>
         </p>
         <Table striped bordered hover>
-        {request.map((organizerDetails, index) => (
-          <div key={index}>
-            <div>
-              
-                <thead width = "100px">
-                  <tr width = "100px" >
-                    <th width = "10px" className = "pb-10x">SN.</th>
-                    <th width = "300px">Name</th>
-                    <th width = "300px">Email</th>
-                    <th width = "300px">Contact</th>
-                    <th width = "300px">Action</th>
+          {request.map((organizerDetails, index) => (
+            <div key={index}>
+              <div>
+                <thead width="100px">
+                  <tr width="100px">
+                    <th width="10px" className="pb-10x">
+                      SN.
+                    </th>
+                    <th width="300px">Name</th>
+                    <th width="300px">Email</th>
+                    <th width="300px">Contact</th>
+                    <th width="300px">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className = "pb-50x">{index+1}</td>
+                    <td className="pb-50x">{index + 1}</td>
                     <td>{request[index].Fullname}</td>
                     <td>{request[index].Email}</td>
                     <td>{request[index].Contact}</td>
@@ -52,11 +53,10 @@ export default function AdminDashboard() {
                     </td>
                   </tr>
                 </tbody>
-             
+              </div>
             </div>
-          </div>
-        ))}
-         </Table>
+          ))}
+        </Table>
       </div>
       <Footer />
     </div>
