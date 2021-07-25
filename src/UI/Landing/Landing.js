@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Landing/landing.css'
-import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import LandingNavbar from '../../Components/LandingNavbar';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
 
 
 
@@ -83,31 +85,19 @@ class Landing extends Component {
       </div>
       <div className="row gx-5 justify-content-center">
         {/* Pricing card free*/}
-        <div className="col-lg-6 col-xl-4">
-              <div className="small text-uppercase fw-bold text-muted">Table tennis</div>
-              <div className="mb-3" >
-              <img className="img-fluid" src="images/img1.jpg" width="1000px"  alt />
-              </div>
+        <div class="carousel-wrapper">
+            <Carousel infiniteLoop useKeyboardArrows autoPlay>
+                <div>
+                    <img src = "../img1.jpg" />
+                </div>
+                <div>
+                    <img src="../img2.jpg" />
+                </div>
+                <div>
+                    <img src="../img3.jpg" />
+                </div>
+            </Carousel>
         </div>
-
-
-        <div className="col-lg-6 col-xl-4">
-          
-              <div className="small text-uppercase fw-bold text-muted">Boxing</div>
-              <div className="mb-3" >
-              <img className="img-fluid" src="images/img2.jpg"  width="1000px" alt />
-              </div>
-          </div>
-        
-       
-        <div className="col-lg-6 col-xl-4">
-
-              <div className="small text-uppercase fw-bold text-muted">Volleyball</div>
-              <div className="mb-3"  >
-              <img className="img-fluid " src="images/img3.jpg"  width="1000px"alt />
-              
-            </div>
-          </div>
         </div>
       </div>
     
