@@ -51,6 +51,29 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.header { 
+
+    background-color: #23978e;
+}
+
+.landingNav-button {
+
+    text-decoration: none;
+    color: whitesmoke;
+}
+.landingNav-button-register  {
+
+    text-decoration: none;
+    color: var(--bs-green);
+}
+.landingNav-button-register:hover  {
+
+    text-decoration: none;
+    color: whitesmoke   
+}
+
+
+
 hr {
   margin: 1rem 0;
   color: inherit;

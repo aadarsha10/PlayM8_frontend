@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "../Components/NavBar";
+import LandingNavbar from "../Components/LandingNavbar";
 import { Form, Row, Col } from "react-bootstrap";
 import "../scss/Registration.scss";
 // import Alert from 'react-bootstrap/Alert'
@@ -62,7 +62,7 @@ const RegistrationOrganizer = () => {
 
   return (
     <div>
-      <NavBar />
+      <LandingNavbar />
       <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary">
         Organizer Registration
       </span>
