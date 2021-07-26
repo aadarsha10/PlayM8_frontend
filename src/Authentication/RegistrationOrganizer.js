@@ -34,7 +34,7 @@ const RegistrationOrganizer = () => {
     console.log("data", data);
 
     axios
-      .post("http://localhost:90/admin/request/register", data)
+      .post("../admin/request/register", data)
       .then((response) => {
         console.log("response", response.data.message);
 
@@ -66,51 +66,6 @@ const RegistrationOrganizer = () => {
       <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary">
         Organizer Registration
       </span>
-      {
-        !checkLogin &&
-
-        <div className = "container border border-success pt-10x pb-10x pr-10x pl-10x" >
-        
-            <Form>
-                            <Row className="mb-3">
-                    <Form.Group as = {Col} controlId="fullName">
-                        <Col md="auto">
-                        <Form.Label className = "label">Full Name</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Player Full Name"
-                            onChange={(event) => {
-                                return setFname(event.target.value);
-                            }}
-                        />
-                    </Col>
-                   
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="contact">
-                    <Col md="auto">
-                    <Form.Label className = "label">Contact</Form.Label>
-                    <Form.Control type="number" placeholder="Contact Number"  
-                    onChange={(event) => {
-                                return setContact(event.target.value);
-                            }} />
-                    </Col>
-                    </Form.Group>
-                </Row>
-
-                            <Form.Group className="mb-3" controlId="address">
-                <Form.Label className = "label">Address</Form.Label>
-                <Form.Control placeholder="Street, City"
-                 onChange={(event) => {
-                    return setAddress(event.target.value);
-                }} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="email">
-                <Col sm = {5}>
-                <Form.Label className = "label">Email</Form.Label>
-                <Form.Control placeholder="Enter Your Email" 
-                 onChange={(event) => {
       {!checkLogin && (
         <div className="container border border-success pt-10x pb-10x pr-10x pl-10x">
           <Form>
@@ -165,30 +120,6 @@ const RegistrationOrganizer = () => {
             </Form.Group>
 
             <Row className="mb-3">
-                    <Form.Group as = {Col} controlId="userName">
-                        <Col md="auto">
-                        <Form.Label className = "label">Username</Form.Label>
-                    <Form.Control type="text" placeholder="Enter your Username" 
-                     onChange={(event) => {
-                        return setUsername(event.target.value);
-                    }}/>
-                    </Col>
-                   
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="password">
-                    <Col md="auto">
-                    <Form.Label className = "label">Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" 
-                     onChange={(event) => {
-                        return setPassword(event.target.value);
-                    }}/>
-                    </Col>
-                    </Form.Group>
-                </Row>
-
-            <Row>
-                <Col sm = {12} id= "btnRegister" className = "flex flex-center">
               <Form.Group as={Col} controlId="Username">
                 <Col md="auto">
                   <Form.Label className="label">Username</Form.Label>
@@ -215,8 +146,6 @@ const RegistrationOrganizer = () => {
                 </Col>
               </Form.Group>
             </Row>
-
-
 
             <Row>
               <Col sm={12} className="flex flex-center">
