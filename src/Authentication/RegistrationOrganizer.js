@@ -73,7 +73,7 @@ const RegistrationOrganizer = () => {
               <Form.Group as={Col} controlId="Email">
                 <Col md="auto">
                   <Form.Label className="label">Full Name</Form.Label>
-                  <Form.Control
+                  <Form.Control id="fullName"
                     type="text"
                     placeholder="Enter Your Full Name"
                     onChange={(event) => {
@@ -86,7 +86,7 @@ const RegistrationOrganizer = () => {
               <Form.Group as={Col} controlId="contact">
                 <Col md="auto">
                   <Form.Label className="label">Contact</Form.Label>
-                  <Form.Control
+                  <Form.Control id="contact"
                     type="number"
                     placeholder="Contact Number"
                     onChange={(event) => {
@@ -99,7 +99,7 @@ const RegistrationOrganizer = () => {
 
             <Form.Group className="mb-3" controlId="Address">
               <Form.Label className="label">Address</Form.Label>
-              <Form.Control
+              <Form.Control id="address"
                 placeholder="Street, City"
                 onChange={(event) => {
                   return setAddress(event.target.value);
@@ -110,7 +110,7 @@ const RegistrationOrganizer = () => {
             <Form.Group className="mb-3" controlId="Address">
               <Col sm={5}>
                 <Form.Label className="label">Email</Form.Label>
-                <Form.Control
+                <Form.Control id="email"
                   placeholder="Enter Your Email"
                   onChange={(event) => {
                     return setEmail(event.target.value);
@@ -123,7 +123,7 @@ const RegistrationOrganizer = () => {
               <Form.Group as={Col} controlId="Username">
                 <Col md="auto">
                   <Form.Label className="label">Username</Form.Label>
-                  <Form.Control
+                  <Form.Control id="userName"
                     type="text"
                     placeholder="Enter your Username"
                     onChange={(event) => {
@@ -136,7 +136,7 @@ const RegistrationOrganizer = () => {
               <Form.Group as={Col} controlId="contact">
                 <Col md="auto">
                   <Form.Label className="label">Password</Form.Label>
-                  <Form.Control
+                  <Form.Control id="password"
                     type="password"
                     placeholder="Password"
                     onChange={(event) => {
@@ -149,7 +149,7 @@ const RegistrationOrganizer = () => {
 
             <Row>
               <Col sm={12} className="flex flex-center">
-                <button
+                <button id="btnRegister"
                   className="btn btn-primary border border-success"
                   onClick={registerorganizer}
                 >

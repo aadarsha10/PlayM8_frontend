@@ -62,14 +62,14 @@ export default function Login() {
                 </h1>
                 <div class="login">
                   <div class="form-group">
-                    <Form.Label
+                    <Form.Label id="userName"
                       for="inputUsername"
                       className="flex flext-left "
                       style={{ color: "#23978e" }}
                     >
                       Username
                     </Form.Label>
-                    <Form.Control
+                    <Form.Control id="password"
                       type="text"
                       placeholder="Enter your Username"
                       onChange={(event) => {
