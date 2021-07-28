@@ -21,10 +21,10 @@ export default function LandingNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className = "ml-20x">PlayM8</Nav.Link>
+            <Nav.Link className = "ml-20x nav-main">PlayM8</Nav.Link>
           </Nav>
-          <div className = "container">
-          <Form inline className = "flex flex-right">
+          <div className = "flex flex-right">
+          <Form inline className= "">
             <Button variant="success"><Link className = "landingNav-button" to="../organizer/login">Login</Link></Button>&nbsp;
             <Button variant="success"><Link className = "landingNav-button" to="../player/login">Player_Login</Link></Button>&nbsp;
             <Button variant="success"><Link className = "landingNav-button" to="../organizer/register">Register</Link></Button>
