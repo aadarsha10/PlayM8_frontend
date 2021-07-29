@@ -5,11 +5,16 @@ import "../scss/gamebutton.scss";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
-export default function AddPlayer() {
-  const [GameTitle, setPlayerFullName] = useState("");
-  const [Description, setPlayerId] = useState("");
-const [GameType, setPlayerClub] = useState("");
+export default function WomenSinglePlayer() {
+  const [FullName, setPlayerFullName] = useState("");
+  const [PlayerId, setPlayerId] = useState("");
+const [PlayerClub, setPlayerClub] = useState("");
 
+const data = {
+  FullName: FullName,
+  PlayerId: PlayerId,
+  PlayerClub: PlayerClub,
+};
 
 
   

@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main'
 import Add_Event from './UI/Add_Event';
-import AddPlayer from './UI/AddPlayer';
+import MenSinglePlayer from './UI/MenSinglePlayer';
 
 
 
@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
        
-        <AddPlayer/>
+        <Landing_Main/>
         {/* <Footer/> */}
         </div>
        
