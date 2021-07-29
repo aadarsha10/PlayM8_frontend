@@ -75,7 +75,7 @@ const [GameType, setPlayerClub] = useState("");
                       return setPlayerId(event.target.value);
                     }}
                     ></input>
-                    </div>
+                    </div><br/>
 
                     <div className="col-sm-6 mx-auto">
                   <label for="exampleFormControlSelect1">Player's Club</label>
@@ -87,7 +87,7 @@ const [GameType, setPlayerClub] = useState("");
                       return setPlayerClub(event.target.value);
                     }}
                     ></input>
-                    </div>
+                    </div><br/>
               
                
                      
