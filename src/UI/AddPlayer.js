@@ -42,7 +42,7 @@ const [GameType, setPlayerClub] = useState("");
      </button>
      </div>
      <br/>
-     <div className="col-md-7 form mx-auto ">
+     <div className="col-md-7 forms mx-auto ">
               <br />
               <h1>Add Player for Men Single</h1>
               <br />
