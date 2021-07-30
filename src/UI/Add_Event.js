@@ -27,7 +27,7 @@ export default function Add_Event() {
     console.log("addd event data", data);
 
     axios
-      .post("http://localhost:90/organizer/addEvent", data)
+      .post("http://localhost:5000/organizer/addEvent", data)
       .then((response) => {
         console.log("response", response);
 
