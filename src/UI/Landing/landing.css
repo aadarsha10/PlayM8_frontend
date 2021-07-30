@@ -31,15 +31,24 @@ body {
     background-color: #23978e;
 }
 
+.nav-main {
+    margin-left: 80px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .landingNav-button {
 
     text-decoration: none;
     color: whitesmoke;
+    float: right;
 }
 .landingNav-button-register  {
 
     text-decoration: none;
     color: var(--bs-green);
+    float: right;
+    
 }
 .landingNav-button-register:hover  {
 

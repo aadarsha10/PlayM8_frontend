@@ -1,26 +1,24 @@
-
 /* .btnsearch{
 
    margin-left: 82px; 
 /* 
 }  */
 
-
-
-.nav-link{
-    margin-left: 80px;
-    font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-    
-    
-    
-    
-} 
-.nav-link.active {
-    
-    font-size: 20px;
-    color: rgba(211, 230, 219, 0.9);
-    
+.nav-title {
+  margin-left: 70px;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+.nav-sub-title {
+  font-size: 25px;
+}
+.nav-sub-title:hover {
+  font-weight: bold;
+  font-style: italic;
+  font-variant: small-caps;
+}
+.nav-link.active {
+  font-size: 20px;
+  color: rgba(211, 230, 219, 0.9);
+}
