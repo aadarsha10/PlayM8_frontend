@@ -1,91 +1,153 @@
-import { Component } from "react"
-import React from 'react';
-import "./landing.css";
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Landing/landing.css'
+import Footer from '../../Components/Footer';
+import LandingNavbar from '../../Components/LandingNavbar';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+
+
 
 class Landing extends Component {
     render() {
         return (
-            <div>
-                <header className="masthead" >
-                    <div>
-                        <div className="overlay" style={{
-                            backgroundImage: 'url("./images/bg.jpg")'
-                        }}/>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-8 col-md-10 mx-auto">
-                                    <div className="site-heading">
-                                        <h1>
-                                            <b >Solve your toughest problem as a sports Organizer.</b>
-                                        </h1>
-                                        <p>
+           
+          <div>
+              <LandingNavbar/>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content />
+  <meta name="author" content />
+  {/* Favicon*/}
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  {/* Bootstrap icons*/}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  {/* Core theme CSS (includes Bootstrap)*/}
+  <link href="css/styles.css" rel="stylesheet" />
 
-                                            Spend your time growing your organization.
-                                            Let our solutions make your life easier.
-                                        </p>
-                                        <Link to='/organizer/register'>
-                                            <button className="btn btn-success">
-                                                Start Now
-                                            </button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </header>
-
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 order-lg-2">
-                            <div className="p-5">
-                                <img className="img-fluid rounded-circle" src="images/img1.jpg" />
-                            </div>
-                        </div>
-                        <div className="col-lg-6 order-lg-1">
-                            <div className="p-5">
-                                <h2 >
-                                    <b>
-                                        Sports Scheduler Features
-                                    </b>
-                                </h2>
-
-                                <li>
-                                    Create unlimited sports schedule.</li>
-                                <li>
-                                    Set dates,times and duration.
-                                </li>
-                                <li>Add and remove games quickly.</li>
-                                <li>Track scores and standing.</li>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <section>
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-lg-6">
-                                <div className="p-5">
-                                    <h2 >
-                                        <b>Eliminating the hassle of tournament scheduling.</b>
-                                    </h2>
-
-                                    <li>Make free sports schedule in seconds.</li>
-                                    <li>Grow faster with referrals</li>
-                                    <li>Register players online</li>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+  <header className="bg-success py-5">
+    <div className="container px-5">
+      <div className="row gx-5 justify-content-center">
+        <div className="col-lg-6">
+          <div className="text-center my-5">
+            <h1 className="display-5 fw-bolder text-white mb-2"> Solve your toughest problems as a sports manager </h1>
+            <p className="lead text-white-50 mb-4"> Spend your time growing your organization. Not on paperwork or clunky software. Let our solutions make your life easier.  </p>
+            <div className="d-grid gap-3 d-sm-flex justify-content-sm-center">
+              <a className="btn btn-primary btn-lg px-4 me-sm-3" >Get Started</a>
+              
             </div>
-        )
-    }
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {/* Features section*/}
+  <section className="py-5 border-bottom" id="features">
+    <div className="container px-5 my-5">
+      <div className="row gx-5">
+        <div className="col-lg-4 mb-5 mb-lg-0">
+          <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i className="bi bi-collection" /></div>
+          <h2 className="h4 fw-bolder">Grow faster with referrals</h2>
+          <p>Reward your members for inviting their friends. Create a referral program with automatic tracking and rewards. </p>
+          <a className="text-decoration-none" href="#!">
+           Learn more
+            <i className="bi bi-arrow-right" />
+          </a>
+        </div>
+        <div className="col-lg-4 mb-5 mb-lg-0">
+          <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i className="bi bi-building" /></div>
+          <h2 className="h4 fw-bolder">Make schedules in seconds</h2>
+          <p>Create and share sports schedules for leagues and tournaments. Update scores and track standings online.</p>
+          <a className="text-decoration-none" href="#!">
+            Learn more
+            <i className="bi bi-arrow-right" />
+          </a>
+        </div>
+        <div className="col-lg-4">
+          <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i className="bi bi-toggles2" /></div>
+          <h2 className="h4 fw-bolder">Register players online</h2>
+          <p>Accept online sports registrations and payments. Gather player info and offer discounts or promotions</p>
+          <a className="text-decoration-none" href="#!">
+           Learn more
+            <i className="bi bi-arrow-right" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* Pricing section*/}
+  <section className="bg-light py-5 border-bottom">
+    <div className="container px-5 my-5">
+      <div className="text-center mb-5">
+        <h2 className="fw-bolder">Play M8</h2>
+        <p className="lead mb-0"><b>Helps you to create schedule,events of sports in an easy and fast way......</b></p>
+      </div>
+      <div className="row gx-5 justify-content-center">
+        {/* Pricing card free*/}
+        <div class="carousel-wrapper">
+            <Carousel infiniteLoop useKeyboardArrows autoPlay>
+                <div>
+                    <img src = "../img1.jpg" />
+                </div>
+                <div>
+                    <img src="../img2.jpg" />
+                </div>
+                <div>
+                    <img src="../img3.jpg" />
+                </div>
+            </Carousel>
+        </div>
+        </div>
+      </div>
+    
+  </section>
+  {/* Testimonials section*/}
+  <section className="py-5 border-bottom">
+    <div className="container px-5 my-5 px-5">
+      <div className="text-center mb-5">
+        <h2 className="fw-bolder">Customer testimonials</h2>
+        <p className="lead mb-0">Our customers love working with us</p>
+      </div>
+      <div className="row gx-5 justify-content-center">
+        <div className="col-lg-6">
+          {/* Testimonial 1*/}
+          <div className="card mb-4">
+            <div className="card-body p-4">
+              <div className="d-flex">
+                <div className="flex-shrink-0"><i className="bi bi-chat-right-quote-fill text-primary fs-1" /></div>
+                <div className="ms-4">
+                  <p className="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
+                  <div className="small text-muted">Rohan, lalitpur</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Testimonial 2*/}
+          <div className="card">
+            <div className="card-body p-4">
+              <div className="d-flex">
+                <div className="flex-shrink-0"><i className="bi bi-chat-right-quote-fill text-primary fs-1" /></div>
+                <div className="ms-4">
+                  <p className="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
+                  <div className="small text-muted">- Kashiram, ktm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<Footer></Footer>
+</div>
 
-}
-export default Landing;
+            
+    
+            )
+
+        }
+    }
+    export default Landing;
+    
