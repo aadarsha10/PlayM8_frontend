@@ -15,8 +15,8 @@ Given("Test registration functionality", {timeout:30000}, async function (){
     await driver.sleep(delay);
     await driver.findElement(By.id("btnRegister")).click();
 
-    await driver.wait(until.elementLocated(By.id("Organizer_login")), 30000);
-    expect(await driver.wait(until.elementLocated(By.id("Organizer_login"))));
+    await driver.wait(until.elementLocated(By.id("loginForm")), 30000);
+    expect(await driver.wait(until.elementLocated(By.id("loginForm"))));
 });
 
 Given("Test login functionality", {timeout: 30000 }, async function (){
@@ -27,6 +27,6 @@ Given("Test login functionality", {timeout: 30000 }, async function (){
     await driver.sleep(delay);
     await driver.findElement(By.id("btnLogin")).click();
 
-    await driver.wait(until.elementLocated(By.id("RegistrationOrganizer")), 30000);
-    expect(await driver.wait(until.elementLocated(By.id("RegistrationOrganizer"))));
+    await driver.wait(until.elementLocated(By.id("registrationForm")), 30000);
+    expect(await driver.wait(until.elementLocated(By.id("registrationForm"))));
 })

@@ -56,7 +56,7 @@ export default function Login() {
         <div className="container">
           <div className="row">
             <div className="register container-fluid">
-              <form>
+              <form id="loginForm">
                 <h1 style={{ color: "#23978e", fontWeight: "bolder" }}>
                   Login
                 </h1>

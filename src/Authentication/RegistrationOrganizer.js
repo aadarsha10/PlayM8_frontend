@@ -68,7 +68,7 @@ const RegistrationOrganizer = () => {
       </span>
       {!checkLogin && (
         <div className="container border border-success pt-10x pb-10x pr-10x pl-10x">
-          <Form>
+          <Form id="registrationForm">
             <Row className="mb-3">
               <Form.Group as={Col} controlId="Email">
                 <Col md="auto">
