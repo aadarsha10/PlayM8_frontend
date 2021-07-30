@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Table, Button } from "react-bootstrap";
-import NavBar from "../Components/NavBar";
+import LandingNavbar from "../Components/LandingNavbar";
 import { useState, useEffect } from "react";
 import Footer from "../Components/Footer";
 
@@ -18,7 +18,7 @@ export default function AdminDashboard() {
 
   return (
     <div>
-      <NavBar />
+      <LandingNavbar />
 
       <div className="container shadow mt-4">
         <p>

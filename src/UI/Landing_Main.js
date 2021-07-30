@@ -7,6 +7,7 @@ import LoginOrganizer from '../UI/Organizer_login';
 import LoginPlayer from '../UI/Player_login';
 import Landing from './Landing/Landing';
 import Add_Event from './Add_Event';
+import AddPlayer from './AddPlayer';
 import AdminDashboard from './AdminDashboard';
 
 
@@ -29,6 +30,7 @@ class Landing_Main extends Component {
                 
                 <Route path='/admin/dashboard' exact component={AdminDashboard} />
                 <Route path='/AddEvent' exact component={Add_Event} />
+                <Route path='/AddPlayer' exact component={AddPlayer} />
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
   
 
