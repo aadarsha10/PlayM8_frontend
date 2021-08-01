@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 
-export default function WomenSinglePlayer() {
+export default function MixDouble() {
   const [FullName, setPlayerFullName] = useState("");
   const [PlayerId, setPlayerId] = useState("");
 const [PlayerClub, setPlayerClub] = useState("");

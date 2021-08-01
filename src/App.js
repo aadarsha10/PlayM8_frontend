@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Landing_Main from './UI/Landing_Main'
 import Add_Event from './UI/Add_Event';
 import MenSinglePlayer from './UI/MenSinglePlayer';
+import AddPlayer from './UI/AddPlayer';
 
 
 

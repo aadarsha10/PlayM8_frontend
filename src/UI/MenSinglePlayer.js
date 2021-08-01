@@ -5,6 +5,8 @@ import "../scss/gamebutton.scss";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
+
+
 export default function MenSinglePlayer() {
   const [FullName, setPlayerFullName] = useState("");
   const [PlayerId, setPlayerId] = useState("");
@@ -21,32 +23,6 @@ const data = {
 
   return (
     <div>
-       <NavBar />
-      <div className="TableTennis">
-      
-     <button className="Games">
-       Men Single
-     </button>
-     <button className="Games">
-       Female Single
-     </button>
-     <button className="Games">
-       Men Double
-     </button>
-     <button className="Games">
-       Female Double
-     </button>
-     <button className="Games">
-       Men Team
-     </button>
-     <button className="Games">
-       Female Team
-     </button>
-     <button className="Games">
-       Mix Double
-     </button>
-     </div>
-     <br/>
      <div className="col-md-7 forms mx-auto ">
               <br />
               <h1>Add Player for Men Single</h1>
