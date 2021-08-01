@@ -24,8 +24,8 @@ When('I add {int} and {int}', function (int, int2) {
 
       
  
-          Given('I visit google homepage', async () =>  {
-              await driver.get('https://www.google.com')            
+          Given('I visit owner register page', async () =>  {
+              await driver.get("http://localhost:3000/organizer/register")            
           }); 
  
           When('I search for Helmets Nepal', async () => {
