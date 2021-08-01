@@ -98,7 +98,7 @@ export default function Login() {
                 <div class="form-group">
                   <button
                     style={{ backgroundColor: "#23978e", border: "none" }}
-                    className="btn btn-primary border border-success registerbtn"
+                    className="bt bntn-primary border border-success registerbtn"
                     onClick={loginOrganizer}
                   >
                     Login
