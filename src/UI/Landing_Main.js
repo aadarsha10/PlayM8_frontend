@@ -32,7 +32,7 @@ class Landing_Main extends Component {
                 
                 <Route path='/admin/dashboard' exact component={AdminSideNav} />
                 <Route path='/AddEvent' exact component={Add_Event} />
-                <Route path='/AddPlayer' exact component={AddPlayer} />
+                {/* <Route path='/AddPlayer' exact component={AddPlayer} /> */}
                 {/* <Route path='/UserLanding' component={UserLanding}/> */}
   
 
