@@ -34,13 +34,21 @@ class Landing_Main extends Component {
         <Route path="/" exact component={Landing} />
         {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
-        <Route path="/admin/dashboard" exact component={AdminSideNav} />
-        <Route path="/AddEvent" exact component={Add_Event} />
-        <Route path="/AddPlayer" exact component={AddPlayer} />
-        
-        {/* <Route path='/UserLanding' component={UserLanding}/> */}
-      </div>
-    );
-  }
+                <Route path='/player/register' exact component={RegistrationPlayer} />
+                <Route path='/organizer/login' exact component={LoginOrganizer} />
+                <Route path='/player/login' exact component={LoginPlayer} />
+                <Route path='/' exact component={Landing} />
+                {/* <Route path='/sideNav' exact component={sideNav} /> */}
+                
+                <Route path='/admin/dashboard' exact component={AdminSideNav} />
+                <Route path='/AddEvent' exact component={Add_Event} />
+                {/* <Route path='/AddPlayer' exact component={AddPlayer} /> */}
+                {/* <Route path='/UserLanding' component={UserLanding}/> */}
+  
+
+            </div>
+        )
+
+    }
 }
 export default Landing_Main;

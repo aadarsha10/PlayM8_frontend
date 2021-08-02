@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import "../scss/addEvents.scss";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import "../scss/gamebutton.scss";
 import "./AddPlayer.css"
 import logo from "../images/tabletennis.jpeg";
 
@@ -12,7 +13,21 @@ import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
-export default function Add_Event() {
+export default function AddPlayer() {
+  const [GameTitle, setGameTitle] = useState("");
+  const [GameType, setGameType] = useState("");
+  const [Description, setDescription] = useState("");
+  const [ShowAlert, setShowAlert] = useState(null);
+  // const [validate, setValidate] = useState(false)
+
+  console.log("gameTitle", GameTitle);
+
+  const data = {
+    GameTitle: GameTitle,
+    GameType:GameType,
+    Image: "Image.jpg",
+    Description: Description,
+  };
 
   const [AddedEvent, setAddedEvent] = useState("");
 
@@ -75,10 +90,37 @@ export default function Add_Event() {
   </Card.Body>
 </Card>
     </div>
-    </div>
-    </div>
-    }
     
+    
+  </div>
+</div>
+}
+
+<div className="TableTennis">
+      
+      <button className="Games">
+        Men Single
+      </button>
+      <button className="Games">
+        Female Single
+      </button>
+      <button className="Games">
+        Men Double
+      </button>
+      <button className="Games">
+        Female Double
+      </button>
+      <button className="Games">
+        Men Team
+      </button>
+      <button className="Games">
+        Female Team
+      </button>
+      <button className="Games">
+        Mix Double
+      </button>
+      </div>
+
 
  <Footer/>
  </div>
