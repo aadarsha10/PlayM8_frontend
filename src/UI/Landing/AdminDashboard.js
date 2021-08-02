@@ -14,16 +14,43 @@ export default function AdminSideNav() {
     axios.get("http://localhost:5000/getRequest").then((response) => {
       console.log("request", response);
       setRequest(response.data);
-      console.log(request);
     });
   }, []);
+
+ 
+
+  const approved = (approvedDetails, index) => () => {
+
+    const data = {
+        Fullname: approvedDetails.Fullname,
+        Contact: approvedDetails.Contact,
+        Address: approvedDetails.Address,
+        Email: approvedDetails.Email,
+        Username: approvedDetails.Username,
+        Password: approvedDetails.Password,
+      };
+
+   console.log("approvedDetails", data)
+
+   axios
+   .post("http://localhost:5000/admin/approve/register", data)
+   .then((response) => {
+     console.log("response", response.data.message);
+
+   })
+   .catch((error) => {
+     console.log(error);
+   });
+
+  }
   return (
+      
     <div className="container-fluid main-div">
       <div className="container left-div col-2 flex flex-center">
         <SideBarComponent />
       </div>
 
-      <div className="container right-div col-10 flex flex-right">
+      <div className="container right-div col-10 flex flex-center">
         <div className="container shadow mt-4">
           <p>
             <Button className="mt-3" variant="primary">
@@ -52,7 +79,7 @@ export default function AdminSideNav() {
                       <td>{request[index].Email}</td>
                       <td>{request[index].Contact}</td>
                       <td>
-                        <Button variant="success">Approve</Button>&nbsp;
+                        <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
                         <Button variant="danger">Decline</Button>
                       </td>
                     </tr>
@@ -63,21 +90,8 @@ export default function AdminSideNav() {
           </Table>
         </div>
       </div>
-
-
-      {/* <div className="flex bg-success main">
-        <div>
-          <h1>Santoo</h1>
-        </div>
-        <div className = "ml-20x">
-          <h1>Aadarsha</h1>
-        </div>
-      </div> */}
-
-      
-      <div>
-        <Footer />
-      </div>
+              
     </div>
+    
   );
 }
