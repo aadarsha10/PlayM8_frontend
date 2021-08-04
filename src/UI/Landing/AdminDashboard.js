@@ -12,7 +12,7 @@ export default function AdminSideNav() {
     const [request, setRequest] = useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:5000/getRequest").then((response) => {
+      axios.get("/getRequest").then((response) => {
         console.log("request", response);
         setRequest(response.data);
         console.log(request);

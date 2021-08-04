@@ -34,7 +34,7 @@ const RegistrationOrganizer = () => {
     console.log("data", data);
 
     axios
-      .post("http://localhost:90/admin/request/register", data)
+      .post("/admin/request/register", data)
       .then((response) => {
         console.log("response", response.data.message);
 

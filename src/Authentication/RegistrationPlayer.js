@@ -29,7 +29,7 @@ export default function RegistrationPlayer() {
   const addEvent = (e) => {
     e.preventDefault();
 
-    axios.post("/register", data).then((response) => {
+    axios.post("/player/register", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
