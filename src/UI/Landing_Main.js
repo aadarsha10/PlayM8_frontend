@@ -10,8 +10,7 @@ import Add_Event from "./Add_Event";
 // // import AdminDashboard from './AdminDashboard';
 // import sideNav from '../UI/Landing/AdminSideNav'
 import AdminSideNav from "./Landing/AdminDashboard";
-import AddPlayer from "../UI/AddPlayer";
-
+import AddPlayer from "./TableTennisEvents/AddPlayer";
 
 class Landing_Main extends Component {
   render() {
@@ -34,21 +33,18 @@ class Landing_Main extends Component {
         <Route path="/" exact component={Landing} />
         {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
-                <Route path='/player/register' exact component={RegistrationPlayer} />
-                <Route path='/organizer/login' exact component={LoginOrganizer} />
-                <Route path='/player/login' exact component={LoginPlayer} />
-                <Route path='/' exact component={Landing} />
-                {/* <Route path='/sideNav' exact component={sideNav} /> */}
-                
-                <Route path='/admin/dashboard' exact component={AdminSideNav} />
-                <Route path='/AddEvent' exact component={Add_Event} />
-                {/* <Route path='/AddPlayer' exact component={AddPlayer} /> */}
-                {/* <Route path='/UserLanding' component={UserLanding}/> */}
-  
+        <Route path="/player/register" exact component={RegistrationPlayer} />
+        <Route path="/organizer/login" exact component={LoginOrganizer} />
+        <Route path="/player/login" exact component={LoginPlayer} />
+        <Route path="/" exact component={Landing} />
+        {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
-            </div>
-        )
-
-    }
+        <Route path="/admin/dashboard" exact component={AdminSideNav} />
+        <Route path="/AddEvent" exact component={Add_Event} />
+        <Route path="/AddPlayer" exact component={AddPlayer} />
+        {/* <Route path='/UserLanding' component={UserLanding}/> */}
+      </div>
+    );
+  }
 }
 export default Landing_Main;
