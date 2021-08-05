@@ -11,6 +11,7 @@ import Add_Event from "./Add_Event";
 // import sideNav from '../UI/Landing/AdminSideNav'
 import AdminSideNav from "./Landing/AdminDashboard";
 import AddPlayer from "./TableTennisEvents/AddPlayer";
+import C_Events from "./ClientSide/C_Events";
 
 class Landing_Main extends Component {
   render() {
@@ -42,6 +43,7 @@ class Landing_Main extends Component {
         <Route path="/admin/dashboard" exact component={AdminSideNav} />
         <Route path="/AddEvent" exact component={Add_Event} />
         <Route path="/AddPlayer" exact component={AddPlayer} />
+        <Route path="/user/events" exact component={C_Events} />
         {/* <Route path='/UserLanding' component={UserLanding}/> */}
       </div>
     );
