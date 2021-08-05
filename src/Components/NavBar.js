@@ -13,11 +13,18 @@ import "./NavBar.css";
 import logo from "../images/tabletennis.jpeg";
 import { Link } from "react-router-dom";
 
-export default function NavBar() {
+const NavBar = () => {
+
+
+    const getLink = (e) => {
+        const values = e.target.value;
+        console.log("value", values);
+    }
+
   return (
     <Navbar bg="light" expand="lg">
       {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
-      <Image src={logo} alt="logo" roundedCircle height="200px" width="200px" />
+      {/* <Image src={logo} alt="logo" roundedCircle height="200px" width="200px" /> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -34,17 +41,17 @@ export default function NavBar() {
           </Nav.Link>
           <Nav.Link
             className="ml-20x nav-sub-title"
-            href="/organizer/dashboard/addEvents"
+            href="/AddEvent"
           >
             Add Events
           </Nav.Link>
           <NavDropdown
-            title="Sports Type"
+            title="Choose Sports For Entry"
             id="basic-nav-dropdown"
             className="ml-20x nav-sub-title"
           >
             <NavDropdown.Item href="#sfsdf">Football</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Table Tennis</NavDropdown.Item>
+            <NavDropdown.Item href="/AddPlayer">Table Tennis</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Badminton</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Basketball</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Lawn Tennis</NavDropdown.Item>
@@ -58,3 +65,6 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
+
+export default NavBar
