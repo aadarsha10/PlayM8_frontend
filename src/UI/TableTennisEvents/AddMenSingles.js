@@ -75,7 +75,7 @@ const AddMenSingles = ({ playerData, index }) => {
             <div>
               <Form>
                 <Form.Group controlId="">
-                  <Form.Label>Full Name</Form.Label>
+                  <Form.Label>Player's Full Name</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -93,7 +93,7 @@ const AddMenSingles = ({ playerData, index }) => {
                 </Form.Group>      */}
 
                 <Form.Group>
-                  <Form.Label>Id.</Form.Label>
+                  <Form.Label>Player Id.</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder={playerData.PlayerSN}
