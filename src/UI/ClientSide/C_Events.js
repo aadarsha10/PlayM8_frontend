@@ -20,7 +20,7 @@ export default function C_Events() {
         </div>
         <div className ="main-event col-6 mt-20x flex">
             <div className = "col-9 sub-main-event">
-                <span className = "GameTitle">Title of your tournament</span>
+                <span className = "GameTitle">Title of the tournament</span>
 
                 <div className ="event-details col-12 flex mt-20x">
                 <span className = "event-sub-title">Rs100000</span>
