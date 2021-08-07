@@ -10,6 +10,7 @@ import Add_Event from './Add_Event';
 // // import AdminDashboard from './AdminDashboard';
 // import sideNav from '../UI/Landing/AdminSideNav'
 import AdminSideNav from './Landing/AdminDashboard';
+import AddPlayer from '../UI/AddPlayer'
 
 
 class Landing_Main extends Component {
