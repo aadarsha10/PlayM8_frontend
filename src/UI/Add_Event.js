@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
 import { Form } from "react-bootstrap";
+import Footer from "../Components/Footer";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
@@ -27,7 +28,7 @@ export default function Add_Event() {
     console.log("addd event data", data);
 
     axios
-      .post("http://localhost:90/organizer/addEvent", data)
+      .post("http://localhost:5000/organizer/addEvent", data)
       .then((response) => {
         console.log("response", response);
 
@@ -103,8 +104,9 @@ export default function Add_Event() {
                     <option>Football</option>
                     <option>Table Tennis</option>
                     <option>Basketball</option>
-                    <option>Chess</option>
-                    <option>Swimming</option>
+                    <option>Badminton</option>
+                    <option>Lawn Tennis</option>
+                  
                   </select>
                 </div>
                 <div className="form-group">
@@ -161,14 +163,15 @@ export default function Add_Event() {
         <div className="alert alert-success" role="alert">
           <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
           <p>
-            You have Successfully Entered your Event. Please check account
-            section to
+            You have Successfully Entered your Event. Please choose your sports for players entry
+            
           </p>
           <hr></hr>
 
           <p>Thank You !!!</p>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

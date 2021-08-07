@@ -13,7 +13,7 @@
     border-radius: 4px;
     background: #fff;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+      transition: .1s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
   cursor: pointer;
   display: flex;
   
@@ -73,6 +73,14 @@ padding: 3rem 0;
 
 .card:hover{
      transform: scale(1);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+     box-shadow: 0 100px 100px rgba(44, 163, 147, 0.397), 0 10px 800px rgba(2, 150, 248, 0.623);
+}
+
+.addPlayer { 
+    border-style :groove;
+    border-color : skyblue;
+    box-shadow: 0 100px 100px rgba(44, 163, 147, 0.329), 0 10px 800px rgba(2, 150, 248, 0.383);
+    height: 400px;
+    transform: scale(1);
 }
   
