@@ -34,7 +34,7 @@ class Landing extends Component {
             <h1 className="display-5 fw-bolder text-white mb-2"> Solve your toughest problems as a sports manager </h1>
             <p className="lead text-white-50 mb-4"> Spend your time growing your organization. Not on paperwork or clunky software. Let our solutions make your life easier.  </p>
             <div className="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <a className="btn btn-primary btn-lg px-4 me-sm-3" >Get Started</a>
+              <a className="btn btn-primary btn-lg px-4 me-sm-3" href= "/user/events" >Get Started</a>
               
             </div>
           </div>

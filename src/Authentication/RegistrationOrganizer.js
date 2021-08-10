@@ -63,7 +63,7 @@ const RegistrationOrganizer = () => {
   return (
     <div>
       <LandingNavbar />
-      <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary">
+      <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary" >
         Organizer Registration
       </span>
       {!checkLogin && (

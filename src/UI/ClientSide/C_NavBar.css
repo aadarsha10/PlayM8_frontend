@@ -1,0 +1,101 @@
+/* .btnsearch{
+
+   margin-left: 82px; 
+/* 
+}  */
+
+.nav-title {
+    margin-left: 70px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f3ec78;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+  }
+  
+  .nav-sub-title {
+    font-size: 22px;
+    border: solid 2px skyblue;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .nav-sub-title:active {
+    font-weight: bold;
+    
+    font-style: italic;
+    font-variant: small-caps;
+  }
+
+  
+  .nav-sub-title:hover {
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color : grey ;
+    font-variant: small-caps;
+  }
+  .events-category {
+    position: relative;
+    /* z-index: 2; */
+    /* padding-left: 21px;
+    padding-right: 21px; */
+    display: flex;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .event-all {
+      color: #0582b8;
+      border-left: 1px solid #d4d4d4;
+      color: #444;
+        padding: 11px 30px;
+        border-right: 1px solid #d4d4d4;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex: 0;
+  }
+
+  .event-table-tennis {
+    color: #0582b8;
+      padding: 11px 30px;
+      border-right: 1px solid #d4d4d4;
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex: 0;
+  }
+
+
+  .event-all.mod-active::after{
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: calc(50% - 8px);
+    height: 8px;
+    width: 16px;
+    background: #dadadc;
+    z-index: 3;
+  }
+
+  .event-all:hover {
+      background-color: #dadadc;
+      color: grey;
+      text-decoration: none;
+  }
+  .event-table-tennis:hover {
+      background-color: #dadadc;
+      color :  #0582b8;
+      text-decoration: none;
+  }
+
+  .event-item-title:active {
+
+    color: bisque;
+    
+  }
+ 
+
