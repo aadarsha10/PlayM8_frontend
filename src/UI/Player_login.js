@@ -19,7 +19,7 @@ export default function Player_login() {
   const LoginPlayer = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:90/player/login", data).then((response) => {
+    axios.post("/player/login", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {

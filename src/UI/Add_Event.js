@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
 import { Form } from "react-bootstrap";
+import Footer from "../Components/Footer";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
+  const [GameDate, setDate] = useState("");
+  const [Prize, setPrize] = useState("");
+  const [Venue, setVenue] = useState("");
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
-  // const [validate, setValidate] = useState(false)
+
 
   console.log("gameType", GameType);
 
@@ -18,6 +22,9 @@ export default function Add_Event() {
     GameTitle: GameTitle,
     GameType: GameType,
     Image: "Image.jpg",
+    Date : GameDate,
+    Prize : Prize,
+    Venue : Venue,
     Description: Description,
   };
 
@@ -27,7 +34,7 @@ export default function Add_Event() {
     console.log("addd event data", data);
 
     axios
-      .post("http://localhost:90/organizer/addEvent", data)
+      .post("http://localhost:5000/organizer/addEvent", data)
       .then((response) => {
         console.log("response", response);
 
@@ -103,8 +110,9 @@ export default function Add_Event() {
                     <option>Football</option>
                     <option>Table Tennis</option>
                     <option>Basketball</option>
-                    <option>Chess</option>
-                    <option>Swimming</option>
+                    <option>Badminton</option>
+                    <option>Lawn Tennis</option>
+                  
                   </select>
                 </div>
                 <div className="form-group">
@@ -124,6 +132,59 @@ export default function Add_Event() {
                     />
                   </div>
                 </div>
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Dates
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : 21june 2021 - 26june 2021 "
+                      name="date"
+                      onChange={(event) => {
+                        return setDate(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Prize-Pool
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg: Rs 100000"
+                      name="prize"
+                      onChange={(event) => {
+                        return setPrize(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Prize-Pool
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : Lainchour Table Tennis"
+                      name="venue"
+                      onChange={(event) => {
+                        return setVenue(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+             
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="comment">
                     Description
@@ -161,14 +222,15 @@ export default function Add_Event() {
         <div className="alert alert-success" role="alert">
           <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
           <p>
-            You have Successfully Entered your Event. Please check account
-            section to
+            You have Successfully Entered your Event. Please choose your sports for players entry
+            
           </p>
           <hr></hr>
 
           <p>Thank You !!!</p>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

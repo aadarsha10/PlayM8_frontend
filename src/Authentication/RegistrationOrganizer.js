@@ -34,7 +34,7 @@ const RegistrationOrganizer = () => {
     console.log("data", data);
 
     axios
-      .post("http://localhost:90/admin/request/register", data)
+      .post("http://localhost:5000/admin/request/register", data)
       .then((response) => {
         console.log("response", response.data.message);
 
@@ -63,7 +63,7 @@ const RegistrationOrganizer = () => {
   return (
     <div>
       <LandingNavbar />
-      <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary">
+      <span className="flex flex-center fs-30 mb-20x mt-30x font-upper font-primary" >
         Organizer Registration
       </span>
       {!checkLogin && (

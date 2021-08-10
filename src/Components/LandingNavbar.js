@@ -17,7 +17,7 @@ export default function LandingNavbar() {
 
 <Navbar bg="light" expand="lg">
         {/* <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand> */}
-        <Image src = {logo} alt = "logo" roundedCircle height = "200px" width = "200px"/>
+        {/* <Image src = {logo} alt = "logo" roundedCircle height = "200px" width = "200px"/> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
