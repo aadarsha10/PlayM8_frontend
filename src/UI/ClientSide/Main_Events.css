@@ -1,7 +1,7 @@
 .main{
     background-color:rgb(206, 205, 205);
-    height: 500px;
-    
+    height: 100%;
+      
 }
 
 .upcoming {
@@ -17,6 +17,7 @@
     box-shadow: 1px 1px 1px 1px;
     float: left;
     padding : 0;
+    height : auto;
    
 }
 
@@ -40,8 +41,11 @@
     float: left;
 }
 
+
+
 .event-sub-details {
-    color: rgb(182, 182, 182);
+    /* color: rgb(182, 182, 182); */
+    color: rgba(79, 243, 115, 0.692);
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;

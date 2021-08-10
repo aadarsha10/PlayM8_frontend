@@ -7,6 +7,10 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faDoorOpen
+  } from "@fortawesome/free-solid-svg-icons";
 import "./C_NavBar.css";
 
 
@@ -37,6 +41,11 @@ const NavBar = () => {
           </Nav.Link>
             
           <Nav.Link className="ml-5x nav-sub-title ">Rankings</Nav.Link>
+          
+          <Nav.Link className="ml-5x nav-sub-title ">
+              Login
+              <FontAwesomeIcon icon={faDoorOpen} />
+              </Nav.Link>
           
          
         </Nav>
