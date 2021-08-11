@@ -8,10 +8,13 @@ import axios from "axios";
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
+  const [GameDate, setDate] = useState("");
+  const [Prize, setPrize] = useState("");
+  const [Venue, setVenue] = useState("");
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
-  // const [validate, setValidate] = useState(false)
+
 
   console.log("gameType", GameType);
 
@@ -19,6 +22,9 @@ export default function Add_Event() {
     GameTitle: GameTitle,
     GameType: GameType,
     Image: "Image.jpg",
+    Date : GameDate,
+    Prize : Prize,
+    Venue : Venue,
     Description: Description,
   };
 
@@ -126,6 +132,59 @@ export default function Add_Event() {
                     />
                   </div>
                 </div>
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Dates
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : 21june 2021 - 26june 2021 "
+                      name="date"
+                      onChange={(event) => {
+                        return setDate(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Prize-Pool
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg: Rs 100000"
+                      name="prize"
+                      onChange={(event) => {
+                        return setPrize(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group ">
+                  <label className="control-label col-sm-2" htmlFor="fname">
+                    Prize-Pool
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : Lainchour Table Tennis"
+                      name="venue"
+                      onChange={(event) => {
+                        return setVenue(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+             
                 <div className="form-group">
                   <label className="control-label col-sm-2" htmlFor="comment">
                     Description

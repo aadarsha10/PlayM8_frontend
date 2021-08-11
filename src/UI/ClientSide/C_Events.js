@@ -30,8 +30,8 @@ export default function C_Events() {
 
             <div className ="event-details col-12 flex">
                 <span className = "event-sub-details ">Prize Pool</span>
-                <span className = "event-sub-details pl-50x">Dates</span>
-                <span className = "event-sub-details pl-90x">Venue</span>
+                <span className = "event-sub-details pl-50x">Date</span>
+                <span className = "event-sub-details pl-90x">Venue of the event</span>
             </div>
             </div>
 
