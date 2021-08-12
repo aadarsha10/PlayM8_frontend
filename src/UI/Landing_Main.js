@@ -34,10 +34,10 @@ class Landing_Main extends Component {
         <Route path="/" exact component={Landing} />
         {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
-        <Route path="/player/register" exact component={RegistrationPlayer} />
-        <Route path="/organizer/login" exact component={LoginOrganizer} />
-        <Route path="/player/login" exact component={LoginPlayer} />
-        <Route path="/" exact component={Landing} />
+        {/* <Route path="/player/register" exact component={RegistrationPlayer} /> */}
+        {/* <Route path="/organizer/login" exact component={LoginOrganizer} /> */}
+        {/* <Route path="/player/login" exact component={LoginPlayer} /> */}
+        {/* <Route path="/" exact component={Landing} /> */}
         {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
         <Route path="/admin/dashboard" exact component={AdminSideNav} />

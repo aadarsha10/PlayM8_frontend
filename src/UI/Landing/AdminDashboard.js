@@ -4,8 +4,6 @@ import SideBarComponent from "./SideBarComponent";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Footer from "../../Components/Footer";
-import NavBar from "../../Components/NavBar";
 
 export default function AdminSideNav() {
   const [request, setRequest] = useState([]);
@@ -17,34 +15,34 @@ export default function AdminSideNav() {
     });
   }, []);
 
- 
+
 
   const approved = (approvedDetails, index) => () => {
 
     const data = {
-        Fullname: approvedDetails.Fullname,
-        Contact: approvedDetails.Contact,
-        Address: approvedDetails.Address,
-        Email: approvedDetails.Email,
-        Username: approvedDetails.Username,
-        Password: approvedDetails.Password,
-      };
+      Fullname: approvedDetails.Fullname,
+      Contact: approvedDetails.Contact,
+      Address: approvedDetails.Address,
+      Email: approvedDetails.Email,
+      Username: approvedDetails.Username,
+      Password: approvedDetails.Password,
+    };
 
-   console.log("approvedDetails", data)
+    console.log("approvedDetails", data)
 
-   axios
-   .post("admin/approve/register", data)
-   .then((response) => {
-     console.log("response", response.data.message);
+    axios
+      .post("/admin/approve/register", data)
+      .then((response) => {
+        console.log("response", response.data.message);
 
-   })
-   .catch((error) => {
-     console.log(error);
-   });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   }
   return (
-      
+
     <div className="container-fluid main-div">
       <div className="container left-div col-2 flex flex-center">
         <SideBarComponent />
@@ -79,7 +77,7 @@ export default function AdminSideNav() {
                       <td>{request[index].Email}</td>
                       <td>{request[index].Contact}</td>
                       <td>
-                        <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
+                        <Button variant="success" onClick={approved(organizerDetails, index)}>Approve</Button>&nbsp;
                         <Button variant="danger">Decline</Button>
                       </td>
                     </tr>
@@ -90,8 +88,8 @@ export default function AdminSideNav() {
           </Table>
         </div>
       </div>
-              
+
     </div>
-    
+
   );
 }

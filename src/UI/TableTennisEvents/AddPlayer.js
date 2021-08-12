@@ -108,12 +108,10 @@ export default function AddPlayer() {
       {ShowAlert === false && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
+            Hello Oraganizer.
           </h4>
           <p>You haven't added event for Table Tennis for players entry.</p>
           <hr></hr>
-
-          <p>Thank You !!!</p>
         </div>
       )}
 
