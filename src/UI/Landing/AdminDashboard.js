@@ -50,6 +50,33 @@ export default function AdminSideNav() {
    });
 
   }
+  const declined = (approvedDetails, index) => () => {
+
+    const dataDelete = {
+        Username: approvedDetails.Username
+      };
+
+   console.log("approvedDetails", dataDelete)
+
+   axios
+   .delete("http://localhost:5000/delete/request/organizer", dataDelete)
+   .then((response) => {
+     console.log("response", response.data.message);
+
+     if(response.data.message === "Approve Declined")
+     {
+        notifyDelete()
+            
+        
+        
+     }
+
+   })
+   .catch((error) => {
+     console.log(error);
+   });
+
+  }
 
 
 
@@ -57,6 +84,13 @@ export default function AdminSideNav() {
     toast.success("Success Notification !", {
         position: toast.POSITION.TOP_CENTER
       });
+      
+  }
+  const notifyDelete = () => {
+    toast.warning("Approve Declined", {
+        position: toast.POSITION.TOP_CENTER
+      });
+      
   }
   
   return (
@@ -96,7 +130,7 @@ export default function AdminSideNav() {
                       <td>{request[index].Contact}</td>
                       <td>
                         <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
-                        <Button variant="danger">Decline</Button>
+                        <Button variant="danger" onClick = {declined(organizerDetails, index)}>Decline</Button>
                       </td>
                     </tr>
                   </tbody>

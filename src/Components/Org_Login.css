@@ -11,6 +11,13 @@
     background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
     
   }
+
+  .heading {
+    font-size: 32px;
+    background: -webkit-linear-gradient( #f64f59, #c471ed, #12c2e9);  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   
   body, html, .App, #root, .outer {
     width: 100%;
