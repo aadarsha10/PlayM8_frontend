@@ -4,6 +4,7 @@ import C_NavBar from "./C_NavBar";
 import "./Main_Events.css";
 import logo from "../../images/tabletennis.jpeg"
 import axios from "axios";
+import Footer from "../../Components/Footer";
 export default function C_Events() {
 
 
@@ -11,7 +12,7 @@ export default function C_Events() {
   const [AddedEvent, setAddedEvent] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/getAddedEvent").then((response) => {
+        axios.get("http://localhost:5000/getAddedEvent/Client").then((response) => {
           console.log("addedEvent", response);
     
         //   if (response.data.length === 0) {
@@ -35,15 +36,15 @@ export default function C_Events() {
       <div className="container main">
         <div className="main-div-events-all">
           <div className="upcoming mt-15x pl-20x col-12">
-            <span className = "float float-left">UPCOMING EVENTS</span>
+            <span className = "float float-center">UPCOMING EVENTS</span>
           </div>
         </div>
         {
         
          AddedEvent.map((addedEvents, index) => (
              <div key = {index}>
-        
-        <div className ="main-event col-7 mt-20x flex">
+        <div className = "container flex flex-center">
+        <div className ="main-event col-7 mt-20x flex ">
             <div className = "col-9 sub-main-event">
                 <span className = "GameTitle">{AddedEvent[index].GameTitle}</span>
 
@@ -66,8 +67,15 @@ export default function C_Events() {
 
         </div>
         </div>
+        </div>
          ))}
       </div>
+
+<div className = "container-fluid">
+
+    <Footer />
+
+</div>
     </div>
   );
 }

@@ -4,11 +4,13 @@ import SideBarComponent from "./SideBarComponent";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Footer from "../../Components/Footer";
-import NavBar from "../../Components/NavBar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 export default function AdminSideNav() {
   const [request, setRequest] = useState([]);
+ 
 
   useEffect(() => {
     axios.get("http://localhost:5000/getRequest").then((response) => {
@@ -37,12 +39,26 @@ export default function AdminSideNav() {
    .then((response) => {
      console.log("response", response.data.message);
 
+     if(response.data.message === "Registered")
+     {
+        notify()
+     }
+
    })
    .catch((error) => {
      console.log(error);
    });
 
   }
+
+
+
+  const notify = () => {
+    toast.success("Success Notification !", {
+        position: toast.POSITION.TOP_CENTER
+      });
+  }
+  
   return (
       
     <div className="container-fluid main-div">
