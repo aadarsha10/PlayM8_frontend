@@ -7,6 +7,7 @@ import Footer from "../Components/Footer";
 import axios from "axios";
 import { toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import cap from '../images/leb.png'
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
@@ -72,12 +73,12 @@ export default function Add_Event() {
         </div>
       )}
       {ShowAlert === null && (
-        <div className="container">
+        <div className="container mt-20x">
           <div className="row">
             <div className="col-md-4 pic">
               <img
-                src="./Capture.png"
-                style={{ height: "650px", width: "400px" }}
+                src={cap}
+                style={{ height: "950px", width: "800px" }}
               ></img>
             </div>
 
