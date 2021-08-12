@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
 import { Form } from "react-bootstrap";
 import Footer from "../Components/Footer";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
@@ -14,10 +16,12 @@ export default function Add_Event() {
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
+  
 
 
-  console.log("gameType", GameType);
+  const Username = localStorage.getItem('username')
 
+  
   const data = {
     GameTitle: GameTitle,
     GameType: GameType,
@@ -26,6 +30,7 @@ export default function Add_Event() {
     Prize : Prize,
     Venue : Venue,
     Description: Description,
+    Username : Username
   };
 
   const Add_Event = (e) => {
@@ -39,7 +44,8 @@ export default function Add_Event() {
         console.log("response", response);
 
         if (response.data.message === "success") {
-          alert("Event Added Successfully");
+        //   alert("Event Added Successfully");
+        toast("Event Added Successfully")
           setShowAlert(true);
           console.log("alert", ShowAlert);
         } else {
@@ -54,7 +60,7 @@ export default function Add_Event() {
       {ShowAlert === false && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
+            Hello {Username}. Sorry to Say THAT !!
           </h4>
           <p>
             You have failed to insert correct data. You must fill all the fields
@@ -169,7 +175,7 @@ export default function Add_Event() {
 
                 <div className="form-group ">
                   <label className="control-label col-sm-2" htmlFor="fname">
-                    Prize-Pool
+                    Venue
                   </label>
                   <div className="col-sm-6 mx-auto">
                     <input
@@ -220,9 +226,9 @@ export default function Add_Event() {
       )}
       {ShowAlert === true && (
         <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
+          <h4 className="alert-heading">Hello {Username}. Congratulations!!</h4>
           <p>
-            You have Successfully Entered your Event. Please choose your sports for players entry
+            You have Successfully Entered your Event. <b><u>PLEASE CHOOSE YOUR SPORT</u></b> for players entry
             
           </p>
           <hr></hr>

@@ -26,7 +26,7 @@ export default function LandingNavbar() {
           <div className = "flex flex-right">
           <Form inline className= "">
             <Button variant="success"><Link className = "landingNav-button" to="../organizer/login">Login</Link></Button>&nbsp;
-            <Button variant="success"><Link className = "landingNav-button" to="../player/login">Player_Login</Link></Button>&nbsp;
+            {/* <Button variant="success"><Link className = "landingNav-button" to="../player/login">Player_Login</Link></Button>&nbsp; */}
             <Button variant="success"><Link className = "landingNav-button" to="../organizer/register">Register</Link></Button>
           </Form>
           </div>

@@ -23,7 +23,7 @@ export default function SideBarComponent() {
             className="text-decoration-none"
             style={{ color: "inherit" }}
           >
-            Navigation
+            ADMIN PANEL
           </a>
         </CDBSidebarHeader>
 

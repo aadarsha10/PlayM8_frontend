@@ -3,6 +3,7 @@ import "../scss/login.scss";
 import { Form } from "react-bootstrap";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import LandingNavbar from "../Components/LandingNavbar";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,11 +37,21 @@ export default function Login() {
         setShowAlert(false);
       } else {
         // alert("Logged In Successfully");
-        // setShowAlert(true);
-        // console.log("alert", ShowAlert);
         notify();
+        localStorage.setItem('token', response.data.token)
+        localStorage.setItem('customerID', response.data.organizerID)
+        localStorage.setItem('username', response.data.organizerUsername)
+        localStorage.setItem('email', response.data.organizerEmail)
+        localStorage.setItem('phone', response.data.organizerPhone)
+        console.log(localStorage.getItem('phone'))
+        setShowAlert(true);
       }
     });
+  };
+
+  const history = useHistory();
+  const loggedIn = () => {
+    history.push("/AddEvent");
   };
 
   return (
@@ -108,17 +119,21 @@ export default function Login() {
           </div>
         </div>
       )}
-      {ShowAlert === true && (
-        <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Organizer. Congratulations!!</h4>
-          <p>
-            You have Successfully been logged in.
-          </p>
-          <hr></hr>
+      {ShowAlert === true && loggedIn()
+        // <div className="alert alert-success" role="alert">
+        //   <h4 className="alert-heading">Hello Organizer. Congratulations!!</h4>
+        //   <p>
+        //     You have Successfully been logged in.
+        //   </p>
+        //   <hr></hr>
 
-          <p>Thank You !!!</p>
-        </div>
-      )}
+        //   <p>Thank You !!!</p>
+        // </div>
+
+
+
+    
+      }
     </div>
   );
 }
