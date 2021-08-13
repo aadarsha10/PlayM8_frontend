@@ -73,22 +73,22 @@ export default function Add_Event() {
         </div>
       )}
       {ShowAlert === null && (
-        <div className="container mt-20x">
+        <div className="container mt-20x ">
           <div className="row">
-            <div className="col-md-4 pic">
+            <div className="col-md-5 pic">
               <img
                 src={cap}
-                style={{ height: "950px", width: "800px" }}
+                style={{ height: "902px", width: "800px" }}
               ></img>
             </div>
 
-            <div className="col-md-8 form mx-auto ">
+            <div className="col-md-7 form m-auto ">
               <br />
-              <h1>Add your Event</h1>
+              <h1 className ="title">Add your Event</h1>
               <br />
               <div className="contact-form">
                 <div className="form-group ">
-                  <label className="control-label col-sm-2" htmlFor="fname">
+                  <label className="control-label col-sm-8 title" htmlFor="fname">
                     Event Title
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -106,7 +106,7 @@ export default function Add_Event() {
                 </div>
 
                 <div className="col-sm-6 mx-auto">
-                  <label for="exampleFormControlSelect1">Game type</label>
+                  <label for="exampleFormControlSelect1" className = "title">Game type</label>
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
@@ -123,7 +123,7 @@ export default function Add_Event() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label className="control-label col-sm-4" htmlFor="email">
+                  <label className="control-label col-sm-4 title" htmlFor="email">
                     Event Poster
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -140,7 +140,7 @@ export default function Add_Event() {
                   </div>
                 </div>
                 <div className="form-group ">
-                  <label className="control-label col-sm-2" htmlFor="fname">
+                  <label className="control-label col-sm-2 title" htmlFor="fname">
                     Dates
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -157,7 +157,7 @@ export default function Add_Event() {
                   </div>
                 </div>
                 <div className="form-group ">
-                  <label className="control-label col-sm-2" htmlFor="fname">
+                  <label className="control-label col-sm-5 title" htmlFor="fname">
                     Prize-Pool
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -175,7 +175,7 @@ export default function Add_Event() {
                 </div>
 
                 <div className="form-group ">
-                  <label className="control-label col-sm-2" htmlFor="fname">
+                  <label className="control-label col-sm-2 title" htmlFor="fname">
                     Venue
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -193,10 +193,10 @@ export default function Add_Event() {
                 </div>
              
                 <div className="form-group">
-                  <label className="control-label col-sm-2" htmlFor="comment">
+                  <label className="control-label col-sm-2 title" htmlFor="comment">
                     Description
                   </label>
-                  <div className="col-sm-6 mx-auto">
+                  <div className="col-sm-8 mx-auto">
                     <textarea
                       className="form-control"
                       placeholder="Description of your event"
@@ -210,7 +210,7 @@ export default function Add_Event() {
                   </div>
                 </div>
                 <div className="form-group">
-                  <div className="col-sm-offset-2 col-sm-6 mx-auto p-2">
+                  <div className="col-sm-offset-1 col-sm-8 mx-auto p-2">
                     <button
                       type="submit"
                       className="btn btn-success"
