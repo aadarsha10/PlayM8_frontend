@@ -17,7 +17,7 @@ class Landing_Main extends Component {
   render() {
     return (
       <div>
-        <Route path="/organizer/register" exact component={RegistrationOrganizer} />
+        <Route path="/organizer/register" exact component={RegisterOrganizer} />
         <Route path="/player/register" exact component={RegistrationPlayer} />
         <Route path="/organizer/login" exact component={Org_Login} />
         <Route path="/player/login" exact component={LoginPlayer} />

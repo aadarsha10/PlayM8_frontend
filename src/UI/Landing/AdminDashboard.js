@@ -10,10 +10,10 @@ toast.configure()
 
 export default function AdminSideNav() {
   const [request, setRequest] = useState([]);
- 
+
 
   useEffect(() => {
-    axios.get("/organizer/getRequest").then((response) => {
+    axios.get("http://localhost:5000/organizer/getRequest").then((response) => {
       console.log("request", response);
       setRequest(response.data);
     });
@@ -35,45 +35,43 @@ export default function AdminSideNav() {
     console.log("approvedDetails", data)
 
     axios
-      .post("/admin/approve/register", data)
+      .post("http://localhost:5000/admin/approve/register", data)
       .then((response) => {
         console.log("response", response.data.message);
 
-     if(response.data.message === "Registered")
-     {
-        notify()
-     }
-   })
-   .catch((error) => {
-     console.log(error);
-   });
+        if (response.data.message === "Registered") {
+          notify()
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   }
   const declined = (approvedDetails, index) => () => {
 
     const dataDelete = {
-        Username: approvedDetails.Username
-      };
+      Username: approvedDetails.Username
+    };
 
-   console.log("approvedDetails", dataDelete)
+    console.log("approvedDetails", dataDelete)
 
-   axios
-   .delete("http://localhost:5000/delete/request/organizer", dataDelete)
-   .then((response) => {
-     console.log("response", response.data.message);
+    axios
+      .delete("http://localhost:5000/delete/request/organizer", dataDelete)
+      .then((response) => {
+        console.log("response", response.data.message);
 
-     if(response.data.message === "Approve Declined")
-     {
-        notifyDelete()
-            
-        
-        
-     }
+        if (response.data.message === "Approve Declined") {
+          notifyDelete()
 
-   })
-   .catch((error) => {
-     console.log(error);
-   });
+
+
+        }
+
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   }
 
@@ -81,17 +79,17 @@ export default function AdminSideNav() {
 
   const notify = () => {
     toast.success("Approve Success !", {
-        position: toast.POSITION.TOP_CENTER
-      });
-      
+      position: toast.POSITION.TOP_CENTER
+    });
+
   }
   const notifyDelete = () => {
     toast.warning("Approve Declined", {
-        position: toast.POSITION.TOP_CENTER
-      });
-      
+      position: toast.POSITION.TOP_CENTER
+    });
+
   }
-  
+
   return (
 
     <div className="container-fluid main-div">
@@ -128,8 +126,8 @@ export default function AdminSideNav() {
                       <td>{request[index].Email}</td>
                       <td>{request[index].Contact}</td>
                       <td>
-                        <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
-                        <Button variant="danger" onClick = {declined(organizerDetails, index)}>Decline</Button>
+                        <Button variant="success" onClick={approved(organizerDetails, index)}>Approve</Button>&nbsp;
+                        <Button variant="danger" onClick={declined(organizerDetails, index)}>Decline</Button>
                       </td>
                     </tr>
                   </tbody>
