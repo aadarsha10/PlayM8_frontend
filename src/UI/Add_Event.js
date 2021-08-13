@@ -16,7 +16,7 @@ export default function Add_Event() {
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
-  
+  const [Image, SetImage]=useState("")
 
 
   const Username = localStorage.getItem('username')
@@ -25,7 +25,7 @@ export default function Add_Event() {
   const data = {
     GameTitle: GameTitle,
     GameType: GameType,
-    Image: "Image.jpg",
+    Image: Image,
     Date : GameDate,
     Prize : Prize,
     Venue : Venue,
@@ -213,10 +213,7 @@ export default function Add_Event() {
                     <button
                       type="submit"
                       className="btn btn-success"
-                      onClick={Add_Event}
-                    >
-                      Submit
-                    </button>
+                      onClick={Add_Event}>Submit</button>
                   </div>
                 </div>
               </div>

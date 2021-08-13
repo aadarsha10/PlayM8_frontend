@@ -13,7 +13,7 @@ export default function AdminSideNav() {
  
 
   useEffect(() => {
-    axios.get("/getRequest").then((response) => {
+    axios.get("/organizer/getRequest").then((response) => {
       console.log("request", response);
       setRequest(response.data);
     });
@@ -43,18 +43,14 @@ export default function AdminSideNav() {
      {
         notify()
      }
-
    })
    .catch((error) => {
      console.log(error);
    });
 
   }
-
-
-
   const notify = () => {
-    toast.success("Success Notification !", {
+    toast.success("Approve Success !", {
         position: toast.POSITION.TOP_CENTER
       });
   }
