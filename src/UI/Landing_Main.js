@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, NavLink, Switch } from "react-router-dom";
 import RegistrationPlayer from "../Authentication/RegistrationPlayer";
-import RegistrationOrganizer from "../Authentication/RegistrationOrganizer";
+import RegisterOrganizer from "../Authentication/RegisterOrganizer";
 import LoginPlayer from "../UI/Player_login";
 import Landing from "./Landing/Landing";
 import Add_Event from "./Add_Event";
@@ -25,7 +25,7 @@ class Landing_Main extends Component {
         <Route
           path="/organizer/register"
           exact
-          component={RegistrationOrganizer}
+          component={RegisterOrganizer}
         />
 
         <Route path="/player/register" exact component={RegistrationPlayer} />

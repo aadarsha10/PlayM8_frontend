@@ -1,18 +1,25 @@
 body{
-    background-color: #fff;
+    background-color: red;
 }
 .contact{
     padding: 1%;
     height: 400px;
 }
+
+
 .col-md-3{
-    background: #F4F6F5;
+    background: red;
    
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
 .form{
-    background-color: #F4F6F5;
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+.title {
+    color :white
 }
 .contact-info{
     margin-top:10%;
