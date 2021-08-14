@@ -225,7 +225,7 @@ export default function AddPlayer() {
       {Mensingles == true && (
         <div>
           {MenSinglesPlayer.length > 0 && (
-            <div className="container border border-primary mt-10x">
+            <div className="container border border-primary mt-10x playerDetail">
               <span className="fs-20 flex flex-center mt-20x mb-20x">
                 Players For Mens Singles
               </span>
