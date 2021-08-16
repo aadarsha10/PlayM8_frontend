@@ -19,11 +19,11 @@ export default function SideBarComponent() {
       <CDBSidebar textColor="#fff" backgroundColor="#333" className="width">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a
-            href="/"
+            href="/admin/dashboard"
             className="text-decoration-none"
             style={{ color: "inherit" }}
           >
-            Navigation
+            ADMIN
           </a>
         </CDBSidebarHeader>
 
@@ -35,13 +35,18 @@ export default function SideBarComponent() {
               </NavLink>
             </div>
             <div className="sidebar-menu">
-              <NavLink exact to="/sideNav" activeClassName="activeClicked">
-                <CDBSidebarMenuItem icon="table">Table</CDBSidebarMenuItem>
+              <NavLink exact to="/admin/playerRank" activeClassName="activeClicked">
+                <CDBSidebarMenuItem icon="table">Rankings</CDBSidebarMenuItem>
               </NavLink>
             </div>
             <div className="sidebar-menu">
               <NavLink exact to="/profile" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+              </NavLink>
+            </div>
+            <div className="sidebar-menu">
+              <NavLink exact to="/sideNav" activeClassName="activeClicked">
+                <CDBSidebarMenuItem icon="table">Table</CDBSidebarMenuItem>
               </NavLink>
             </div>
             <div className="sidebar-menu">

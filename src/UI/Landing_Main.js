@@ -12,6 +12,8 @@ import AdminSideNav from "./Landing/AdminDashboard";
 import AddPlayer from "./TableTennisEvents/AddPlayer";
 import C_Events from "./ClientSide/C_Events";
 import Org_Login from "../Components/Org_Login";
+import AddPlayerRank from "./Admin/PlayerRanking";
+// import AdminDashboard from "./AdminDashboard";
 
 class Landing_Main extends Component {
   render() {
@@ -24,6 +26,7 @@ class Landing_Main extends Component {
 
         <Route path="/" exact component={Landing} />
         <Route path="/admin/dashboard" exact component={AdminSideNav} />
+        <Route path="/admin/playerRank" exact component={AddPlayerRank} />
         <Route path="/AddEvent" exact component={Add_Event} />
         <Route path="/AddPlayer" exact component={AddPlayer} />
         <Route path="/user/events" exact component={C_Events} />

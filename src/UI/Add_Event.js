@@ -140,12 +140,6 @@ export default function Add_Event() {
                       id="poster"
                       name="image"
                       placeholder="Insert a poster"
-                      // onChange={(e) => {
-                      //   return setImage(
-                      //     // preview: URL.createObjectURL(e.target.files[0]),
-                      //     e.target.files[0]
-                      //   );
-                      // }}
                       onChange={filehandler}
                     />
                   </div>

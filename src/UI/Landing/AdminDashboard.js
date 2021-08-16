@@ -1,6 +1,8 @@
 import React from "react";
 import "./sideNav.css";
-import SideBarComponent from "./SideBarComponent";
+import SideBarComponent from "./SideBarComponent";//old
+// import SideBarComponent from "../../Components/SideBarComponent";
+
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
@@ -8,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-export default function AdminSideNav() {
+export default function AdminDashBoard() {
   const [request, setRequest] = useState([]);
 
 
@@ -18,8 +20,6 @@ export default function AdminSideNav() {
       setRequest(response.data);
     });
   }, []);
-
-
 
   const approved = (approvedDetails, index) => () => {
 
@@ -63,9 +63,6 @@ export default function AdminSideNav() {
 
         if (response.data.message === "Approve Declined") {
           notifyDelete()
-
-
-
         }
 
       })
@@ -89,7 +86,6 @@ export default function AdminSideNav() {
     });
 
   }
-
   return (
 
     <div className="container-fluid main-div">
