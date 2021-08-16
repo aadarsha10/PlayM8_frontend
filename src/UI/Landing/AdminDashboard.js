@@ -1,8 +1,7 @@
 import React from "react";
 import "./sideNav.css";
-import SideBarComponent from "./SideBarComponent";//old
+import SideBarComponent from "./SideBarComponent";//old yo chai 
 // import SideBarComponent from "../../Components/SideBarComponent";
-
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
