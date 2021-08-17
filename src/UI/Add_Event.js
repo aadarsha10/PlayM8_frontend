@@ -1,25 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
 import { Form } from "react-bootstrap";
 import Footer from "../Components/Footer";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  import cap from '../images/leb.png'
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
+  const [GameDate, setDate] = useState("");
+  const [Prize, setPrize] = useState("");
+  const [Venue, setVenue] = useState("");
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
-  // const [validate, setValidate] = useState(false)
+  
 
-  console.log("gameType", GameType);
 
+  const Username = localStorage.getItem('username')
+
+  
   const data = {
     GameTitle: GameTitle,
     GameType: GameType,
     Image: "Image.jpg",
+    Date : GameDate,
+    Prize : Prize,
+    Venue : Venue,
     Description: Description,
+    Username : Username
   };
 
   const Add_Event = (e) => {
@@ -33,7 +45,8 @@ export default function Add_Event() {
         console.log("response", response);
 
         if (response.data.message === "success") {
-          alert("Event Added Successfully");
+        //   alert("Event Added Successfully");
+        toast("Event Added Successfully")
           setShowAlert(true);
           console.log("alert", ShowAlert);
         } else {
@@ -48,7 +61,7 @@ export default function Add_Event() {
       {ShowAlert === false && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
+            Hello {Username}. Sorry to Say THAT !!
           </h4>
           <p>
             You have failed to insert correct data. You must fill all the fields
@@ -60,22 +73,22 @@ export default function Add_Event() {
         </div>
       )}
       {ShowAlert === null && (
-        <div className="container">
+        <div className="container mt-20x ">
           <div className="row">
-            <div className="col-md-4 pic">
+            <div className="col-md-5 pic">
               <img
-                src="./Capture.png"
-                style={{ height: "650px", width: "400px" }}
+                src={cap}
+                style={{ height: "902px", width: "800px" }}
               ></img>
             </div>
 
-            <div className="col-md-8 form mx-auto ">
+            <div className="col-md-7 form m-auto ">
               <br />
-              <h1>Add your Event</h1>
+              <h1 className ="title">Add your Event</h1>
               <br />
               <div className="contact-form">
                 <div className="form-group ">
-                  <label className="control-label col-sm-2" htmlFor="fname">
+                  <label className="control-label col-sm-8 title" htmlFor="fname">
                     Event Title
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -93,7 +106,7 @@ export default function Add_Event() {
                 </div>
 
                 <div className="col-sm-6 mx-auto">
-                  <label for="exampleFormControlSelect1">Game type</label>
+                  <label for="exampleFormControlSelect1" className = "title">Game type</label>
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
@@ -110,7 +123,7 @@ export default function Add_Event() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label className="control-label col-sm-4" htmlFor="email">
+                  <label className="control-label col-sm-4 title" htmlFor="email">
                     Event Poster
                   </label>
                   <div className="col-sm-6 mx-auto">
@@ -126,11 +139,64 @@ export default function Add_Event() {
                     />
                   </div>
                 </div>
-                <div className="form-group">
-                  <label className="control-label col-sm-2" htmlFor="comment">
-                    Description
+                <div className="form-group ">
+                  <label className="control-label col-sm-2 title" htmlFor="fname">
+                    Dates
                   </label>
                   <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : 21june 2021 - 26june 2021 "
+                      name="date"
+                      onChange={(event) => {
+                        return setDate(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="form-group ">
+                  <label className="control-label col-sm-5 title" htmlFor="fname">
+                    Prize-Pool
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg: Rs 100000"
+                      name="prize"
+                      onChange={(event) => {
+                        return setPrize(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group ">
+                  <label className="control-label col-sm-2 title" htmlFor="fname">
+                    Venue
+                  </label>
+                  <div className="col-sm-6 mx-auto">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      placeholder="Eg : Lainchour Table Tennis"
+                      name="venue"
+                      onChange={(event) => {
+                        return setVenue(event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+             
+                <div className="form-group">
+                  <label className="control-label col-sm-2 title" htmlFor="comment">
+                    Description
+                  </label>
+                  <div className="col-sm-8 mx-auto">
                     <textarea
                       className="form-control"
                       placeholder="Description of your event"
@@ -144,7 +210,7 @@ export default function Add_Event() {
                   </div>
                 </div>
                 <div className="form-group">
-                  <div className="col-sm-offset-2 col-sm-6 mx-auto p-2">
+                  <div className="col-sm-offset-1 col-sm-8 mx-auto p-2">
                     <button
                       type="submit"
                       className="btn btn-success"
@@ -161,9 +227,9 @@ export default function Add_Event() {
       )}
       {ShowAlert === true && (
         <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Hello Oraganizer. Congratulations!!</h4>
+          <h4 className="alert-heading">Hello {Username}. Congratulations!!</h4>
           <p>
-            You have Successfully Entered your Event. Please choose your sports for players entry
+            You have Successfully Entered your Event. <b><u>PLEASE CHOOSE YOUR SPORT</u></b> for players entry
             
           </p>
           <hr></hr>

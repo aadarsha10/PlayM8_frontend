@@ -33,8 +33,18 @@ export default function AddPlayer() {
   const [TieSheetTie, setTieSheetTie] = useState(false);
   // const [validate, setValidate] = useState(false)
 
+  const OrgUsername = localStorage.getItem('username')
+
+
+  const datapack = {
+      GameType : "Table Tennis",
+      Username : OrgUsername
+      }
+
+      console.log('username', datapack)
+
   useEffect(() => {
-    axios.get("http://localhost:5000/getAddedEvent").then((response) => {
+    axios.post("http://localhost:5000/getAddedEvent", datapack).then((response) => {
       console.log("addedEvent", response);
 
       if (response.data.length === 0) {
@@ -182,6 +192,8 @@ export default function AddPlayer() {
               <Form.Label className="flex flex-left fw-bold">Id.</Form.Label>
               <Form.Control
                 type="number"
+                min="1" 
+                max="300"
                 placeholder="SN number"
                 onChange={(event) => {
                   return setPlayerSN(event.target.value);

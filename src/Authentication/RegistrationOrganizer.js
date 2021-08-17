@@ -13,7 +13,7 @@ const RegistrationOrganizer = () => {
   const [Address, setAddress] = useState("");
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
-  const [response1, setResponse] = useState("");
+//   const [response1, setResponse] = useState("");
   const [validationError, setError] = useState("");
   const [checkLogin, setLoginCheck] = useState(false);
 
@@ -40,7 +40,8 @@ const RegistrationOrganizer = () => {
 
         if (response.data.message === "Request sent") {
           alert("Your request for registration has been sent");
-          // setLoginCheck(true);
+          setLoginCheck(true);
+        //   goToLogin()
         } else {
           const valerror = response.data.message;
           setError(valerror);
@@ -48,7 +49,7 @@ const RegistrationOrganizer = () => {
           //   alert(response.data.message)
         }
 
-        //   goToLogin()
+          
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +58,7 @@ const RegistrationOrganizer = () => {
 
   const history = useHistory();
   const goToLogin = () => {
-    history.push("/login");
+    history.push("/organizer/login");
   };
 
   return (
@@ -88,6 +89,9 @@ const RegistrationOrganizer = () => {
                   <Form.Label className="label">Contact</Form.Label>
                   <Form.Control id="contact"
                     type="number"
+                    min = "1"
+                    maxLength = "10"
+                    max ="9999999999"
                     placeholder="Contact Number"
                     onChange={(event) => {
                       return setContact(event.target.value);

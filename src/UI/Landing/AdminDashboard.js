@@ -4,11 +4,13 @@ import SideBarComponent from "./SideBarComponent";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Footer from "../../Components/Footer";
-import NavBar from "../../Components/NavBar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 export default function AdminSideNav() {
   const [request, setRequest] = useState([]);
+ 
 
   useEffect(() => {
     axios.get("http://localhost:5000/getRequest").then((response) => {
@@ -37,12 +39,60 @@ export default function AdminSideNav() {
    .then((response) => {
      console.log("response", response.data.message);
 
+     if(response.data.message === "Registered")
+     {
+        notify()
+     }
+
    })
    .catch((error) => {
      console.log(error);
    });
 
   }
+  const declined = (approvedDetails, index) => () => {
+
+    const dataDelete = {
+        Username: approvedDetails.Username
+      };
+
+   console.log("approvedDetails", dataDelete)
+
+   axios
+   .delete("http://localhost:5000/delete/request/organizer", dataDelete)
+   .then((response) => {
+     console.log("response", response.data.message);
+
+     if(response.data.message === "Approve Declined")
+     {
+        notifyDelete()
+            
+        
+        
+     }
+
+   })
+   .catch((error) => {
+     console.log(error);
+   });
+
+  }
+
+
+
+  const notify = () => {
+    toast.success("Success Notification !", {
+        position: toast.POSITION.TOP_CENTER
+      });
+      
+  }
+  const notifyDelete = () => {
+    toast.warning("Approve Declined", {
+        position: toast.POSITION.TOP_CENTER
+      });
+      
+  }
+  
   return (
       
     <div className="container-fluid main-div">
@@ -80,7 +130,7 @@ export default function AdminSideNav() {
                       <td>{request[index].Contact}</td>
                       <td>
                         <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
-                        <Button variant="danger">Decline</Button>
+                        <Button variant="danger" onClick = {declined(organizerDetails, index)}>Decline</Button>
                       </td>
                     </tr>
                   </tbody>
