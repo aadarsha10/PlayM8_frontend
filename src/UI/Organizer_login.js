@@ -61,7 +61,7 @@ export default function Login() {
              <h1 style={{ color: '#23978e', fontWeight: 'bolder' }}>Login</h1>
            <div class="login">
                    <div class="form-group">
-                            <Form.Label for="inputUsername" className = "flex flext-left " style = {{color : '#23978e'}}>Username</Form.Label>
+                            <Form.Label for="inputUsername" id = "username" className = "flex flext-left " style = {{color : '#23978e'}}>Username</Form.Label>
                               <Form.Control
                                 type="text"  placeholder="Enter your Username"
                                  onChange={(event) => {
@@ -70,7 +70,7 @@ export default function Login() {
                    </div>
                    <div class="form-group">
       
-      <Form.Label for="inputPassword" className = "flex flext-left mt-10x" style = {{color : '#23978e'}}>Password</Form.Label>
+      <Form.Label for="inputPassword" id = "password" className = "flex flext-left mt-10x" style = {{color : '#23978e'}}>Password</Form.Label>
     <Form.Control
                   type="password"
                   placeholder="Enter your password"
@@ -86,7 +86,7 @@ export default function Login() {
       
       <div class="form-group">
       <button
-             style={{ backgroundColor: '#23978e', border:'none'}} className="btn btn-primary border border-success registerbtn"
+             style={{ backgroundColor: '#23978e', border:'none'}} id = "btnLogin" className="btn btn-primary border border-success registerbtn"
               onClick={loginOrganizer}
             >
              Login

@@ -12,15 +12,15 @@ let driver = new webdriver.Builder()
     .build();
 
 
-let sum=0;
-When('I add {int} and {int}', function (int, int2) {
-    sum = int + int2
-    });
+// let sum=0;
+// When('I add {int} and {int}', function (int, int2) {
+//     sum = int + int2
+//     });
 
-    Then('the result should be {int}', function (result) {
+//     Then('the result should be {int}', function (result) {
         
-        expect(sum).equal(result)
-        });
+//         expect(sum).equal(result)
+//         });
 
 
       
@@ -42,7 +42,7 @@ When('I add {int} and {int}', function (int, int2) {
             //await driver.findElement(By.id("btnRegister")).click().perform();
           //   await driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/form/div[5]/div/button\r\n" +
           //  "")).click();   
-          driver.findElement(By.id("btnRegister")).sendKeys("Selenium Tutorial", Key.RETURN);  
+          driver.findElement(By.id("btnRegister")).sendKeys("btnRegister", Key.RETURN);  
           });
  
  
