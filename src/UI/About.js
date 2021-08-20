@@ -9,6 +9,12 @@ class About extends Component {
       return (
         <div>
           <LandingNavbar />
+          <div>
+          <h1>At Playpass, we love making life easier for sports managers</h1>
+Our online solutions save time for sports managers. Try our free schedule maker,
+ registration software, referral program, waiver solution, or website builder. 
+ Everything we do is built for mobile and works beautifully on your tablet, laptop, or desktop computer.
+          </div>
          
             <Footer />
         </div>
