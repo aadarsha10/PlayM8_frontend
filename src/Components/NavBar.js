@@ -2,23 +2,28 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
 import "./NavBar.css";
-
-import logo from "../images/tabletennis.jpeg";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { faDoorClosed } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavBar = () => {
 
+    const Username = localStorage.getItem('username')
 
     const getLink = (e) => {
         const values = e.target.value;
         console.log("value", values);
+    }
+    const history = useHistory();
+    const logout = () => {
+
+        localStorage.clear();
+        
+        
+          history.push("/");
+    
     }
 
   return (
@@ -29,6 +34,7 @@ const NavBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link className="ml-20x nav-title">PlayM8</Nav.Link>
+        
         </Nav>
 
         <Nav className="mr-auto ml-auto">
@@ -37,7 +43,7 @@ const NavBar = () => {
             className="ml-20x nav-sub-title"
             href="/organizer/dashboard/account"
           >
-            Account
+            Account {Username}
           </Nav.Link>
           <Nav.Link
             className="ml-20x nav-sub-title"
@@ -58,6 +64,14 @@ const NavBar = () => {
             {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">School Ev</NavDropdown.Item> */}
           </NavDropdown>
+          <Nav.Link
+            className="ml-20x nav-sub-title logout"
+            
+            onClick = {logout}
+          >
+                <FontAwesomeIcon icon={faDoorClosed} />
+            Logout
+          </Nav.Link>
         </Nav>
 
         {/* <Navbar.Brand>Hello Organizer !!!</Navbar.Brand> */}
