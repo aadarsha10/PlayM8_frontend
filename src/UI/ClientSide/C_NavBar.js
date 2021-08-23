@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
@@ -40,7 +41,18 @@ const NavBar = () => {
             Matches
           </Nav.Link>
             
-          <Nav.Link className="ml-5x nav-sub-title ">Rankings</Nav.Link>
+          <NavDropdown
+            title="Rankings"
+            id="basic-nav-dropdown"
+            className="ml-5x nav-sub-title"
+          >
+            <NavDropdown.Item href="#sfsdf">Football</NavDropdown.Item>
+            <NavDropdown.Item href="/rankings/tabletennis">Table Tennis</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Badminton</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Basketball</NavDropdown.Item>
+            {/* <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">School Ev</NavDropdown.Item> */}
+          </NavDropdown>
           
           <Nav.Link className="ml-5x nav-sub-title ">
               Login
