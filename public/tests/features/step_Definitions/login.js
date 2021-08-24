@@ -1,5 +1,4 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { expect } = require('chai')
 const webdriver = require('selenium-webdriver');
 const {By, Key} = require('selenium-webdriver');
 const { delay } = require("../utils/delay");
@@ -20,14 +19,14 @@ Given('I should visit login page', async () =>
 When('I should provide username and password to register and click login button', async () => 
 {
   
-  await driver.findElement(By.id("userName")).sendKeys("aadarsha12");
+  await driver.findElement(By.id("username")).sendKeys("aadarsha12");
   await driver.findElement(By.id("password")).sendKeys("Aadarsha123");  
   await driver.sleep(delay);  
     
   driver.findElement(By.id("btnLogin")).sendKeys("btnLogin", Key.RETURN);  
 }); 
 
-Then('I should see dashboard', async () => 
+Then('I should see form to add events', async () => 
 {
-  await driver.get("http://localhost:/admin/dashboard")
+  await driver.get("http://localhost:3000/AddEvent")
 });

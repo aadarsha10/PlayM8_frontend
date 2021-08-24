@@ -71,6 +71,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>First name</label>
               <input
+                id="fullName"
                 type="text"
                 className="form-control"
                 placeholder="Full Name"
@@ -83,6 +84,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>Contact</label>
               <input
+                id="contact"
                 type="number"
                 min = "1"
                 className="form-control"
@@ -96,6 +98,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>Email</label>
               <input
+                id="email"
                 type="email"
                 className="form-control"
                 placeholder="Enter Email"
@@ -107,6 +110,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>Username</label>
               <input
+                id="userName"
                 type="text"
                 className="form-control"
                 placeholder="Enter Username"
@@ -119,6 +123,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>Address</label>
               <input
+                id="address"
                 type="text"
                 className="form-control"
                 placeholder="Street, City"
@@ -133,6 +138,7 @@ export default function RegisterOrganizer() {
             <div className="form-group">
               <label>Password</label>
               <input
+                id="password"
                 type="password"
                 className="form-control"
                 placeholder="Enter Password"
@@ -142,7 +148,7 @@ export default function RegisterOrganizer() {
               />
             </div>
 
-            <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={registerorganizer}>
+            <button id="btnRegister" type="submit" className="btn btn-dark btn-lg btn-block" onClick={registerorganizer}>
               Register
             </button>
             <p className="forgot-password text-right">

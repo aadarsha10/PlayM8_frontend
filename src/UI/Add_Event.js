@@ -95,7 +95,7 @@ export default function Add_Event() {
                     <input
                       type="text"
                       className="form-control"
-                      id="fname"
+                      id="eName"
                       placeholder="Enter Your Event"
                       name="fname"
                       onChange={(event) => {
@@ -130,7 +130,7 @@ export default function Add_Event() {
                     <input
                       type="file"
                       className="form-control"
-                      id="email"
+                      id="ePoster"
                       placeholder="Enter email"
                       name="email"
                       onChange={(event) => {
@@ -164,7 +164,7 @@ export default function Add_Event() {
                     <input
                       type="text"
                       className="form-control"
-                      id="date"
+                      id="prize"
                       placeholder="Eg: Rs 100000"
                       name="prize"
                       onChange={(event) => {
@@ -182,7 +182,7 @@ export default function Add_Event() {
                     <input
                       type="text"
                       className="form-control"
-                      id="date"
+                      id="venue"
                       placeholder="Eg : Lainchour Table Tennis"
                       name="venue"
                       onChange={(event) => {
@@ -212,6 +212,7 @@ export default function Add_Event() {
                 <div className="form-group">
                   <div className="col-sm-offset-1 col-sm-8 mx-auto p-2">
                     <button
+                    id="submit"
                       type="submit"
                       className="btn btn-success"
                       onClick={Add_Event}

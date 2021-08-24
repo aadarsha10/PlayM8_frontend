@@ -69,6 +69,7 @@ export default function Org_Login() {
             <div className="form-group">
               <label>Username</label>
               <input
+                id="username"
                 type="text"
                 className="form-control"
                 placeholder="Enter Username"
@@ -81,6 +82,7 @@ export default function Org_Login() {
             <div className="form-group">
               <label>Password</label>
               <input
+                id="password"
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
@@ -103,7 +105,7 @@ export default function Org_Login() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={loginOrganizer}>
+            <button id="btnLogin" type="submit" className="btn btn-dark btn-lg btn-block" onClick={loginOrganizer}>
               Sign in
             </button>
             <p className="forgot-password text-right">
