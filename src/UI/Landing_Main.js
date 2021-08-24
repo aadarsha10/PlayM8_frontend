@@ -19,14 +19,11 @@ class Landing_Main extends Component {
       // {/* <NavLink to = '/register'>register</NavLink> */}
       // {/* <Switch>
       // <Route path='/register' component={Register}></Route>
+      //ssh testing
       // </Switch> */}
       <div>
         {/* <Route path='/home' component={Home} /> */}
-        <Route
-          path="/organizer/register"
-          exact
-          component={RegisterOrganizer}
-        />
+        <Route path="/organizer/register" exact component={RegisterOrganizer} />
 
         <Route path="/player/register" exact component={RegistrationPlayer} />
         <Route path="/organizer/login" exact component={Org_Login} />
