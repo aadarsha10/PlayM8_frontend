@@ -111,8 +111,8 @@ class Landing extends Component {
               <h2 className="fw-bolder">Play M8</h2>
               <p className="lead mb-0">
                 <b>
-                  Helps you to create schedule,events of sports in an easy and
-                  fast way......
+                  Helps you to create schedule, events of sports in an easy and
+                  fast way....
                 </b>
               </p>
             </div>
@@ -120,9 +120,7 @@ class Landing extends Component {
               {/* Pricing card free*/}
               <div class="carousel-wrapper">
                 <Carousel infiniteLoop useKeyboardArrows autoPlay>
-                  <div>
-                    <img src="../img1.jpg" />
-                  </div>
+                  
                   <div>
                     <img src="../img2.jpg" />
                   </div>
