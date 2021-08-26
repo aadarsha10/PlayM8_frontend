@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
        
-        <Landing_Main/>
+        <AddPlayer/>
         {/* <Footer/> */}
         </div>
        
