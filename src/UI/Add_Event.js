@@ -106,7 +106,7 @@ export default function Add_Event() {
                 </div>
 
                 <div className="col-sm-6 mx-auto">
-                  <label for="exampleFormControlSelect1" className = "title">Game type</label>
+                  <label id="gameType" for="exampleFormControlSelect1" className = "title">Game type</label>
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
