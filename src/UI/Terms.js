@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer";
 import LandingNavbar from "../../Components/LandingNavbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-class About extends Component {
+class Terms extends Component {
     render() {
       return (
         <div>
@@ -56,5 +56,5 @@ Additionally, if: (a) you are established in the European Economic Area (EEA); (
       );
     }
   }
-  export default About;
+  export default Terms;
   
