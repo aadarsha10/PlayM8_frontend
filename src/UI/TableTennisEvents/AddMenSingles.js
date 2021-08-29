@@ -9,6 +9,7 @@ import Modal from "react-awesome-modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import Tooltip from "react-simple-tooltip";
+import './AddPlayer.css'
 
 const AddMenSingles = ({ playerData, index }) => {
   const [PlayerFullName, setPlayerFullName] = useState("");
@@ -37,23 +38,24 @@ const AddMenSingles = ({ playerData, index }) => {
   const updatePlayerInfo = () => {
     console.log("data", data);
 
-    axios.put("http://localhost:80/updateMenSingle", data).then((response) => {
+    axios.put("http://localhost:5000/updateMenSingle", data).then((response) => {
       console.log("response", response);
+      closeEditModal()
     });
   };
 
   return (
     <div className=" container">
       <div className="flex flex-between mb-2x flex-middle fs-18 link">
-        <div className="curP p-5x">
+        <div className="curP p-5x player-details">
           <span>{playerData.PlayerSN}</span>
         </div>
-        <div className="curP p-5x">{playerData.PlayerFullName}</div>
-        <div className="curP p-5x">
+        <div className="curP p-5x player-details">{playerData.PlayerFullName}</div>
+        <div className="curP p-5x player-details">
           <span>{playerData.PlayerRepresentation}</span>
         </div>
 
-        <div className="curP p-5x mt-2x" style={{ position: "relative" }}>
+        <div className="curP p-5x mt-2x player-details" style={{ position: "relative" }}>
           <Tooltip
             style={{ position: "absolute", bottom: "-2%", right: "0" }}
             content="Edit"
@@ -131,7 +133,7 @@ const AddMenSingles = ({ playerData, index }) => {
             </button>
           </Modal>
         </div>
-        <div className="curP pr-10x mt-10x" style={{ position: "relative" }}>
+        <div className="curP pr-10x mt-10x player-details" style={{ position: "relative" }}>
           <Tooltip
             style={{ position: "absolute", bottom: "100%", right: "0" }}
             content="Delete"

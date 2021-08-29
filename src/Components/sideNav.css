@@ -1,0 +1,32 @@
+.main-div {
+
+    height: 100%;
+    width: 100%;
+    position: absolute;  
+   
+}
+
+.left-div {
+
+    min-height: 400px;
+   
+    float: left;
+    position: relative;
+}
+.right-div {
+
+    height: 100%;
+    position: relative;
+    
+}
+
+.width {
+margin-right: 50px;
+}
+
+.sidebar-menu:hover{
+
+    background-color: skyblue;
+    text-decoration: underline;
+    transform : scale(1.13)
+}

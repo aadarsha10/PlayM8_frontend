@@ -37,6 +37,7 @@ export default function Login() {
         localStorage.setItem('phone', response.data.organizerPhone)
         console.log(localStorage.getItem('phone'))
         setShowAlert(true);
+        console.log("asfadsfa", ShowAlert)
       }
     });
   };
