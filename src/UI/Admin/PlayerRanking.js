@@ -33,7 +33,7 @@ export default function AddPlayerRank() {
 
     const data = new FormData();
     data.append("image", image)
-    data.append("fullName", fullname)
+    data.append("fullname", fullname)
     data.append("topRankSwitch", topRankSwitch)
     data.append("rank", rank)
     data.append("representation", representation)

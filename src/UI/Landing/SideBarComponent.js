@@ -40,6 +40,11 @@ export default function SideBarComponent() {
             </NavLink>
             </div>
             <div className = "sidebar-menu">
+            <NavLink exact to="/playerRank" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Rankings</CDBSidebarMenuItem>
+            </NavLink>
+            </div>
+            <div className = "sidebar-menu">
             <NavLink exact to="/profile" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
             </NavLink>
