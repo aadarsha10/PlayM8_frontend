@@ -30,23 +30,43 @@ export default function Login() {
   const loginOrganizer = (e) => {
     e.preventDefault();
 
-    axios.post("/organizer/login", data).then((response) => {
-      console.log("response", response);
+    if (data.userName=='admin'){
+      axios.post("/login/admin", data).then((response) => {
+        console.log("response", response);
 
-      if (response.data.message === "Fields Must not be Empty") {
-        setShowAlert(false);
-      } else {
-        // alert("Logged In Successfully");
-        notify();
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('customerID', response.data.organizerID)
-        localStorage.setItem('username', response.data.organizerUsername)
-        localStorage.setItem('email', response.data.organizerEmail)
-        localStorage.setItem('phone', response.data.organizerPhone)
-        console.log(localStorage.getItem('phone'))
-        setShowAlert(true);
-      }
-    });
+        if (response.data.message === "Fields Must not be Empty") {
+          setShowAlert(false);
+        } else {
+          // alert("Logged In Successfully");
+          notify();
+          localStorage.setItem('token', response.data.token)
+          localStorage.setItem('AdminID', response.data.organizerID)
+          localStorage.setItem('username', response.data.organizerUsername)
+          localStorage.setItem('email', response.data.organizerEmail)
+          localStorage.setItem('phone', response.data.organizerPhone)
+          console.log(localStorage.getItem('token'))
+          setShowAlert(true);
+        }
+      });
+    }else{
+      axios.post("/organizer/login", data).then((response) => {
+        console.log("response", response);
+
+        if (response.data.message === "Fields Must not be Empty") {
+          setShowAlert(false);
+        } else {
+          // alert("Logged In Successfully");
+          notify();
+          localStorage.setItem('token', response.data.token)
+          localStorage.setItem('customerID', response.data.organizerID)
+          localStorage.setItem('username', response.data.organizerUsername)
+          localStorage.setItem('email', response.data.organizerEmail)
+          localStorage.setItem('phone', response.data.organizerPhone)
+          console.log(localStorage.getItem('phone'))
+          setShowAlert(true);
+        }
+      });
+    }
   };
 
   const history = useHistory();
