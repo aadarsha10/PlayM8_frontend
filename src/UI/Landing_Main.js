@@ -16,7 +16,6 @@ import PlayerRank from '../UI/Admin/PlayerRanking'
 import RankingTableTennis from "./Rankings/TableTennis/RankingTableTennis";
 import MenSinglesTiesheet from './TableTennisEvents/MenSinglesTiesheet'
 import PrivacyPolicy from "./Static/PrivacyPolicy";
-import AddPlayerRank from "./admin/PlayerRank"
 
 class Landing_Main extends Component {
   render() {
@@ -30,7 +29,7 @@ class Landing_Main extends Component {
 
         <Route path="/" exact component={Landing} />
         <Route path="/admin/dashboard" exact component={AdminSideNav} />
-        <Route path="/admin/playerRank" exact component={AddPlayerRank} />
+        {/* <Route path="/admin/playerRank" exact component={AddPlayerRank} /> */}
         <Route path="/AddEvent" exact component={Add_Event} />
         <Route path="/AddPlayer" exact component={AddPlayer} />
         <Route path="/user/events" exact component={C_Events} />
