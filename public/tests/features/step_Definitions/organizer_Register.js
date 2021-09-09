@@ -43,12 +43,8 @@ When('I add {int} and {int}', function (int, int2) {
           //   await driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/form/div[5]/div/button\r\n" +
           //  "")).click();   
           driver.findElement(By.id("btnRegister")).sendKeys("btnRegister", Key.RETURN);  
-          });
+          }); 
  
- 
-          Then('I should see Registered successfully message on screen', async () => {
-            
-            driver.switchTo().alert().getText();
-          //   driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/form/div[5]/div/button\r\n" +
-          //  "")).click();
+          Then('I should see Registered successfully message on screen', async () => {            
+            driver.switchTo().alert().accept();
           });
