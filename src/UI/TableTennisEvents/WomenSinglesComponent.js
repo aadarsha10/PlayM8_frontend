@@ -9,6 +9,9 @@ const WomenSinglesComponent = () => {
   const [MenSinglesPlayer, setMenSinglesPlayer] = useState([]);
   const [TieSheetTie, setTieSheetTie] = useState(false);
 
+
+  
+
   return (
     <div className="container addPlayer">
       <span className="flex flex-center fs-20 mb-20x font-upper font-primary">

@@ -8,4 +8,17 @@
     width: 100%;
   
   }
+
+  .navigate{
+
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+  }
+
+  .navigate :hover {
+      font-size: 30px;
+  }
+
+
   

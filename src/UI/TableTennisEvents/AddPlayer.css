@@ -18,6 +18,14 @@
   display: flex;
   
 }
+.player-details {
+    color : silver;
+    font-weight: bold;
+}
+
+.modal {
+    color : black;
+}
 
 
 

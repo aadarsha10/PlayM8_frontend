@@ -33,7 +33,7 @@ export default function AddPlayerRank() {
 
     const data = new FormData();
     data.append("image", image)
-    data.append("fullName", fullname)
+    data.append("fullname", fullname)
     data.append("topRankSwitch", topRankSwitch)
     data.append("rank", rank)
     data.append("representation", representation)
@@ -152,7 +152,10 @@ export default function AddPlayerRank() {
 
                                 {/* <div className="form-group">
                                         <label>Top rank checkbox</label>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04df34b79383ffde7cd6e2d7a62d16ce329f3585
                                         <Checkbox
                                             // checked={false}
                                             onChange={(event) => {
