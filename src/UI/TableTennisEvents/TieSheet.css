@@ -1,0 +1,23 @@
+.main-tiesheet {
+  height: auto;
+  width: 100%;
+  background-color: silver;
+}
+
+.matches {
+  height: 150px;
+  background: white;
+  background: linear-gradient(white, lightgray);
+  margin-top: 5px;
+  width: auto;
+  box-shadow: rgb(172, 172, 172);
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.score-width {
+  width: 50px;
+}
+
+.table-score {
+  padding-top: 10px;
+}

@@ -28,9 +28,17 @@ function Footer() {
           <div className="col">
             <h4>Navigate</h4>
             <ui className="list-unstyled">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Shedule</li>
+              <li><a href = "/" className = "navigate">Home</a></li>
+              <li><a href = "/AboutUs" className = "navigate">About Us</a></li>
+              <li><a href = "/HelpCenter" className = "navigate">Help Center</a></li>
+            </ui>
+          </div>
+          <div className="col">
+            <h4>Terms & Policies</h4>
+            <ui className="list-unstyled">
+            <li><a href = "/legalinformation" className = "navigate">Legal Information</a></li>
+              <li><a href = "/privacyPolicy" className = "navigate">Privacy Policy</a></li>
+              <li><a href = "/CookiesPolicy" className = "navigate">Cookies Policy</a></li>
             </ui>
           </div>
         </div>
