@@ -15,6 +15,7 @@ import Org_Login from "../Components/Org_Login";
 import PlayerRank from '../UI/Admin/PlayerRanking'
 import RankingTableTennis from "./Rankings/TableTennis/RankingTableTennis";
 import MenSinglesTiesheet from './TableTennisEvents/MenSinglesTiesheet'
+import PrivacyPolicy from "./Static/PrivacyPolicy";
 
 class Landing_Main extends Component {
   render() {
@@ -45,6 +46,7 @@ class Landing_Main extends Component {
         <Route path="/playerRank" exact component={PlayerRank} />
         <Route path="/rankings/tabletennis" exact component={RankingTableTennis} />
         <Route path="/menssingles/tie-sheet" exact component={MenSinglesTiesheet} />
+        <Route path="/privacyPolicy" exact component={PrivacyPolicy} />
         {/* <Route path='/UserLanding' component={UserLanding}/> */}
       </div>
     );
