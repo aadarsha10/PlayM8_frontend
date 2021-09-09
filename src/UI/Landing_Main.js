@@ -20,26 +20,16 @@ import PrivacyPolicy from "./Static/PrivacyPolicy";
 class Landing_Main extends Component {
   render() {
     return (
-      // {/* <NavLink to = '/register'>register</NavLink> */}
-      // {/* <Switch>
-      // <Route path='/register' component={Register}></Route>
-      //ssh testing
-      // </Switch> */}
       <div>
-        {/* <Route path='/home' component={Home} /> */}
         <Route path="/organizer/register" exact component={RegisterOrganizer} />
-
         <Route path="/player/register" exact component={RegistrationPlayer} />
         <Route path="/organizer/login" exact component={Org_Login} />
         <Route path="/player/login" exact component={LoginPlayer} />
         
 
-        {/* <Route path='/sideNav' exact component={sideNav} /> */}
-
         <Route path="/" exact component={Landing} />
-        {/* <Route path='/sideNav' exact component={sideNav} /> */}
-
         <Route path="/admin/dashboard" exact component={AdminSideNav} />
+        <Route path="/admin/playerRank" exact component={AddPlayerRank} />
         <Route path="/AddEvent" exact component={Add_Event} />
         <Route path="/AddPlayer" exact component={AddPlayer} />
         <Route path="/user/events" exact component={C_Events} />

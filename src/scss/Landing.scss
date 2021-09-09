@@ -1,0 +1,86 @@
+
+header.masthead {
+    margin-bottom: 50px;
+    background: no-repeat center center;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+  
+  }
+  
+  header.masthead.style{
+  
+   background-size: cover;
+      width: fit-content;
+      height: 100%;
+      position: relative;
+      z-index: -1;
+  }
+  
+  header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: 0.5;
+  }
+  
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading {
+    padding: 200px 0 150px;
+    color: white;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    header.masthead .page-heading,
+    header.masthead .post-heading,
+    header.masthead .site-heading {
+      padding: 200px 0;
+    }
+  }
+  .post-preview > a {
+    color: #212529;
+  }
+  
+  .post-preview > a:focus, .post-preview > a:hover {
+    text-decoration: none;
+    color: #0085A1;
+  }
+  
+  .post-preview > a > .post-title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .post-preview > a > .post-subtitle {
+    font-weight: 300;
+    margin: 0 0 10px;
+  }
+  
+  .post-preview > .post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #868e96;
+  }
+  
+  .post-preview > .post-meta > a {
+    text-decoration: none;
+    color: #212529;
+  }
+  
+  .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
+    text-decoration: underline;
+    color: #0085A1;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .post-preview > a > .post-title {
+      font-size: 36px;
+    }
+  }
+  

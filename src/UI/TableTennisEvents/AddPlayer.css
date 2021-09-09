@@ -92,3 +92,7 @@ padding: 3rem 0;
     transform: scale(1);
 }
   
+.playerDetail{
+  background: #cde1e6;
+  background: linear-gradient(to right, #7c7a7a, #7b777e, #ffffff);
+}

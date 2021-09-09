@@ -152,6 +152,10 @@ export default function AddPlayerRank() {
 
                                 {/* <div className="form-group">
                                         <label>Top rank checkbox</label>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 04df34b79383ffde7cd6e2d7a62d16ce329f3585
                                         <Checkbox
                                             // checked={false}
                                             onChange={(event) => {
