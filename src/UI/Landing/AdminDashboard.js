@@ -1,6 +1,7 @@
 import React from "react";
 import "./sideNav.css";
-import SideBarComponent from "./SideBarComponent";
+import SideBarComponent from "./SideBarComponent";//old yo chai 
+// import SideBarComponent from "../../Components/SideBarComponent";
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
@@ -8,93 +9,84 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-export default function AdminSideNav() {
+export default function AdminDashBoard() {
   const [request, setRequest] = useState([]);
- 
+
 
   useEffect(() => {
-    axios.get("http://localhost:5000/getRequest").then((response) => {
+    axios.get("http://localhost:5000/organizer/getRequest").then((response) => {
       console.log("request", response);
       setRequest(response.data);
     });
   }, []);
 
- 
-
   const approved = (approvedDetails, index) => () => {
 
     const data = {
-        Fullname: approvedDetails.Fullname,
-        Contact: approvedDetails.Contact,
-        Address: approvedDetails.Address,
-        Email: approvedDetails.Email,
-        Username: approvedDetails.Username,
-        Password: approvedDetails.Password,
-      };
+      Fullname: approvedDetails.Fullname,
+      Contact: approvedDetails.Contact,
+      Address: approvedDetails.Address,
+      Email: approvedDetails.Email,
+      Username: approvedDetails.Username,
+      Password: approvedDetails.Password,
+    };
 
-   console.log("approvedDetails", data)
+    console.log("approvedDetails", data)
 
-   axios
-   .post("http://localhost:5000/admin/approve/register", data)
-   .then((response) => {
-     console.log("response", response.data.message);
+    axios
+      .post("http://localhost:5000/admin/approve/register", data)
+      .then((response) => {
+        console.log("response", response.data.message);
 
-     if(response.data.message === "Registered")
-     {
-        notify()
-     }
-
-   })
-   .catch((error) => {
-     console.log(error);
-   });
+        if (response.data.message === "Registered") {
+          notify()
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   }
   const declined = (approvedDetails, index) => () => {
 
     const dataDelete = {
-        Username: approvedDetails.Username
-      };
+      Username: approvedDetails.Username
+    };
 
-   console.log("approvedDetails", dataDelete)
+    console.log("approvedDetails", dataDelete)
 
-   axios
-   .delete("http://localhost:5000/delete/request/organizer", dataDelete)
-   .then((response) => {
-     console.log("response", response.data.message);
+    axios
+      .delete("http://localhost:5000/delete/request/organizer", dataDelete)
+      .then((response) => {
+        console.log("response", response.data.message);
 
-     if(response.data.message === "Approve Declined")
-     {
-        notifyDelete()
-            
-        
-        
-     }
+        if (response.data.message === "Approve Declined") {
+          notifyDelete()
+        }
 
-   })
-   .catch((error) => {
-     console.log(error);
-   });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   }
 
 
 
   const notify = () => {
-    toast.success("Success Notification !", {
-        position: toast.POSITION.TOP_CENTER
-      });
-      
+    toast.success("Approve Success !", {
+      position: toast.POSITION.TOP_CENTER
+    });
+
   }
   const notifyDelete = () => {
     toast.warning("Approve Declined", {
-        position: toast.POSITION.TOP_CENTER
-      });
-      
+      position: toast.POSITION.TOP_CENTER
+    });
+
   }
-  
   return (
-      
+
     <div className="container-fluid main-div">
       <div className="container left-div col-2 flex flex-center">
         <SideBarComponent />
@@ -129,8 +121,8 @@ export default function AdminSideNav() {
                       <td>{request[index].Email}</td>
                       <td>{request[index].Contact}</td>
                       <td>
-                        <Button variant="success" onClick = {approved(organizerDetails, index)}>Approve</Button>&nbsp;
-                        <Button variant="danger" onClick = {declined(organizerDetails, index)}>Decline</Button>
+                        <Button variant="success" onClick={approved(organizerDetails, index)}>Approve</Button>&nbsp;
+                        <Button variant="danger" onClick={declined(organizerDetails, index)}>Decline</Button>
                       </td>
                     </tr>
                   </tbody>
@@ -140,8 +132,8 @@ export default function AdminSideNav() {
           </Table>
         </div>
       </div>
-              
+
     </div>
-    
+
   );
 }

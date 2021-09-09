@@ -3,6 +3,9 @@ import _, { matches } from "lodash";
 //import seeding from "seeding";
 import axios from "axios";
 import NavBar from "../../Components/NavBar";
+import "../TableTennisEvents/TieSheet.css"
+import TieSheetDesignComponent from "./TieSheetDesignComponent";
+import Footer from "../../Components/Footer";
 
 export default function MenSinglesTiesheet() {
   const [MenSinglesPlayer, setMenSinglesPlayer] = useState([]);
@@ -81,12 +84,19 @@ export default function MenSinglesTiesheet() {
     <div>
       <NavBar />
       <div>
-        <div className="container-fluid flex main-tiesheet">
-          <div className="col-4 matches">
-            <div></div>
-          </div>
-        </div>
-      </div>
+          {
+              
+
+              drawMatches.map((match, index) =>(
+                  <div key = {index}>
+                <TieSheetDesignComponent match = {match} index = {index} />
+                </div>
+              ))
+       
+          }
+    </div>
+
+    <Footer />
     </div>
   );
 }

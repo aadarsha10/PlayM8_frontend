@@ -28,8 +28,7 @@ export default function RegistrationPlayer() {
 
   const addEvent = (e) => {
     e.preventDefault();
-
-    axios.post("/register", data).then((response) => {
+    axios.post("/player/register", data).then((response) => {
       console.log("response", response);
 
       if (response.data.message === "Fields Must not be Empty") {
@@ -47,8 +46,7 @@ export default function RegistrationPlayer() {
       <NavBar />
       {ShowAlert === false && (
         <div className="alert alert-danger">
-          <h4 className="alert-heading">
-            Hello Oraganizer. Sorry to Say THAT !!
+          <h4 className="alert-heading">Incomplete Information
           </h4>
           <p>
             You have failed to insert correct data. You must fill all the fields
