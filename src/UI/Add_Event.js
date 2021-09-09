@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../Components/NavBar";
 import "../scss/addEvents.scss";
-import { Form } from "react-bootstrap";
+// import { Form } from "react-bootstrap";
 import Footer from "../Components/Footer";
 // import Alert from 'react-bootstrap/Alert'
 import axios from "axios";
 import { toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  import cap from '../images/leb.png'
+import 'react-toastify/dist/ReactToastify.css';
+import cap from '../images/leb.png'
 
 export default function Add_Event() {
   const [GameTitle, setGameTitle] = useState("");
@@ -17,27 +17,34 @@ export default function Add_Event() {
   const [GameType, setGameType] = useState("");
   const [Description, setDescription] = useState("");
   const [ShowAlert, setShowAlert] = useState(null);
-  
+  const [image, setImage] = useState("");
 
+  const filehandler = (e) => {
+    if (e.target.files[0]) {
+      console.log("picture: ", e.target.files);
+      setImage(
+        (e.target.files[0])
+      );
+    }
+  };
 
   const Username = localStorage.getItem('username')
 
-  
-  const data = {
-    GameTitle: GameTitle,
-    GameType: GameType,
-    Image: "Image.jpg",
-    Date : GameDate,
-    Prize : Prize,
-    Venue : Venue,
-    Description: Description,
-    Username : Username
-  };
+
+  const data = new FormData();
+  data.append("image", image)
+  data.append("GameTitle", GameTitle)
+  data.append("Date", GameDate)
+  data.append("Prize", Prize)
+  data.append("Venue", Venue)
+  data.append("Description", Description)
+  data.append("GameType", GameType)
+  data.append("Username", Username)
 
   const Add_Event = (e) => {
     e.preventDefault();
-
-    console.log("addd event data", data);
+    // data.append("image", image.raw);
+    console.log("add event data", data);
 
     axios
       .post("http://localhost:5000/organizer/addEvent", data)
@@ -45,8 +52,8 @@ export default function Add_Event() {
         console.log("response", response);
 
         if (response.data.message === "success") {
-        //   alert("Event Added Successfully");
-        toast("Event Added Successfully")
+          //   alert("Event Added Successfully");
+          toast("Event Added Successfully")
           setShowAlert(true);
           console.log("alert", ShowAlert);
         } else {
@@ -57,11 +64,11 @@ export default function Add_Event() {
 
   return (
     <div>
-     <NavBar />
+      <NavBar />
       {ShowAlert === false && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">
-            Hello {Username}. Sorry to Say THAT !!
+            Hello {Username}. 
           </h4>
           <p>
             You have failed to insert correct data. You must fill all the fields
@@ -84,9 +91,9 @@ export default function Add_Event() {
 
             <div className="col-md-7 form m-auto ">
               <br />
-              <h1 className ="title">Add your Event</h1>
+              <h1 className="title">Add your Event</h1>
               <br />
-              <div className="contact-form">
+              <form className="contact-form" method="POST" enctype="multipart/form-data">
                 <div className="form-group ">
                   <label className="control-label col-sm-8 title" htmlFor="fname">
                     Event Title
@@ -106,7 +113,11 @@ export default function Add_Event() {
                 </div>
 
                 <div className="col-sm-6 mx-auto">
+<<<<<<< HEAD
                   <label id="gameType" for="exampleFormControlSelect1" className = "title">Game type</label>
+=======
+                  <label for="exampleFormControlSelect1" className="title">Game type</label>
+>>>>>>> 92c8d6f5ed45104fb296a4dfdb1d703cc2ccc1a9
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
@@ -119,7 +130,7 @@ export default function Add_Event() {
                     <option>Basketball</option>
                     <option>Badminton</option>
                     <option>Lawn Tennis</option>
-                  
+
                   </select>
                 </div>
                 <div className="form-group">
@@ -130,12 +141,19 @@ export default function Add_Event() {
                     <input
                       type="file"
                       className="form-control"
+<<<<<<< HEAD
                       id="ePoster"
                       placeholder="Enter email"
                       name="email"
                       onChange={(event) => {
                         return setDescription(event.target.value);
                       }}
+=======
+                      id="poster"
+                      name="image"
+                      placeholder="Insert a poster"
+                      onChange={filehandler}
+>>>>>>> 92c8d6f5ed45104fb296a4dfdb1d703cc2ccc1a9
                     />
                   </div>
                 </div>
@@ -191,7 +209,7 @@ export default function Add_Event() {
                     />
                   </div>
                 </div>
-             
+
                 <div className="form-group">
                   <label className="control-label col-sm-2 title" htmlFor="comment">
                     Description
@@ -215,13 +233,10 @@ export default function Add_Event() {
                     id="submit"
                       type="submit"
                       className="btn btn-success"
-                      onClick={Add_Event}
-                    >
-                      Submit
-                    </button>
+                      onClick={Add_Event}>Submit</button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -231,7 +246,7 @@ export default function Add_Event() {
           <h4 className="alert-heading">Hello {Username}. Congratulations!!</h4>
           <p>
             You have Successfully Entered your Event. <b><u>PLEASE CHOOSE YOUR SPORT</u></b> for players entry
-            
+
           </p>
           <hr></hr>
 

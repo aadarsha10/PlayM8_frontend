@@ -1,6 +1,7 @@
 .main{
     background-color:rgb(206, 205, 205);
-    height: 600px;
+    height: 500px;
+    overflow: scroll;
       
 }
 

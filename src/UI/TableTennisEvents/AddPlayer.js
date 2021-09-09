@@ -11,6 +11,7 @@ import WomenSinglesComponent from "./WomenSinglesComponent";
 import MenTeamComponent from "./MensTeamComponent";
 import AddMenSingles from "./AddMenSingles";
 import WomensTeamComponent from "./WomensTeamComponents";
+import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
@@ -32,8 +33,15 @@ export default function AddPlayer() {
   const [MenSinglesPlayer, setMenSinglesPlayer] = useState([]);
   const [TieSheetTie, setTieSheetTie] = useState(false);
   // const [validate, setValidate] = useState(false)
+  const history = useHistory();
 
   const OrgUsername = localStorage.getItem('username')
+  useEffect(() => {
+    axios.get("http://localhost:5000/getMenSinglesPlayer").then((response) => {
+      setMenSinglesPlayer(response.data);
+      console.log("mens", MenSinglesPlayer);
+    });
+  }, []);
 
 
   const datapack = {
@@ -93,22 +101,29 @@ export default function AddPlayer() {
     PlayerRepresentation: PlayerRepresentation,
   };
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/getMenSinglesPlayer").then((response) => {
-      setMenSinglesPlayer(response.data);
-      console.log("mens", MenSinglesPlayer);
-    });
-  }, [MenSinglesPlayer]);
+  const makeTieSheet = () => {
+   
+    setTieSheetTie(true);
+  
+};
+
+ 
 
   const addPlayer = () => {
     console.log("data", data);
     axios
       .post("http://localhost:5000/players_entry/menssingles", data)
       .then((response) => {
+        singleForm.reset()
         console.log("response", response);
+        window.location.reload(false)
       });
 
-    singleForm.reset();
+    
+  };
+
+  const goToMenSinglesTieSheet = () => {
+    history.push("/menssingles/tie-sheet");
   };
 
   return (
@@ -170,6 +185,7 @@ export default function AddPlayer() {
       )}
 
       {Mensingles == true && (
+          
         <div className="container addPlayer">
           <span className="flex flex-center fs-20 mb-20x font-upper font-primary">
             Men Singles Players Entry Form
@@ -242,7 +258,7 @@ export default function AddPlayer() {
 
               <button
                 className="btn btn-primary flex flex-center"
-                // onClick={makeTieSheet}
+                onClick={makeTieSheet}
               >
                 Make Tie sheet
               </button>
@@ -270,10 +286,13 @@ export default function AddPlayer() {
       )}
 
 
+   <div>{TieSheetTie && goToMenSinglesTieSheet()}</div>
 
 
 
       <Footer />
+
+      
     </div>
   );
 }

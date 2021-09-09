@@ -12,6 +12,9 @@ import AdminSideNav from "./Landing/AdminDashboard";
 import AddPlayer from "./TableTennisEvents/AddPlayer";
 import C_Events from "./ClientSide/C_Events";
 import Org_Login from "../Components/Org_Login";
+import PlayerRank from '../UI/Admin/PlayerRanking'
+import RankingTableTennis from "./Rankings/TableTennis/RankingTableTennis";
+import MenSinglesTiesheet from './TableTennisEvents/MenSinglesTiesheet'
 
 class Landing_Main extends Component {
   render() {
@@ -28,6 +31,7 @@ class Landing_Main extends Component {
         <Route path="/player/register" exact component={RegistrationPlayer} />
         <Route path="/organizer/login" exact component={Org_Login} />
         <Route path="/player/login" exact component={LoginPlayer} />
+        
 
         {/* <Route path='/sideNav' exact component={sideNav} /> */}
 
@@ -38,6 +42,9 @@ class Landing_Main extends Component {
         <Route path="/AddEvent" exact component={Add_Event} />
         <Route path="/AddPlayer" exact component={AddPlayer} />
         <Route path="/user/events" exact component={C_Events} />
+        <Route path="/playerRank" exact component={PlayerRank} />
+        <Route path="/rankings/tabletennis" exact component={RankingTableTennis} />
+        <Route path="/menssingles/tie-sheet" exact component={MenSinglesTiesheet} />
         {/* <Route path='/UserLanding' component={UserLanding}/> */}
       </div>
     );
