@@ -113,11 +113,7 @@ export default function Add_Event() {
                 </div>
 
                 <div className="col-sm-6 mx-auto">
-<<<<<<< HEAD
-                  <label id="gameType" for="exampleFormControlSelect1" className = "title">Game type</label>
-=======
                   <label for="exampleFormControlSelect1" className="title">Game type</label>
->>>>>>> 92c8d6f5ed45104fb296a4dfdb1d703cc2ccc1a9
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
@@ -141,19 +137,10 @@ export default function Add_Event() {
                     <input
                       type="file"
                       className="form-control"
-<<<<<<< HEAD
-                      id="ePoster"
-                      placeholder="Enter email"
-                      name="email"
-                      onChange={(event) => {
-                        return setDescription(event.target.value);
-                      }}
-=======
                       id="poster"
                       name="image"
                       placeholder="Insert a poster"
                       onChange={filehandler}
->>>>>>> 92c8d6f5ed45104fb296a4dfdb1d703cc2ccc1a9
                     />
                   </div>
                 </div>
